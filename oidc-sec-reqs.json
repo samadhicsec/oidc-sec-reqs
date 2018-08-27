@@ -1,0 +1,39 @@
+{
+  "requirements" : [
+    {
+      "area" : "Registration",
+      "step" : "Client credentials",
+      "priority" : "Must",
+      "requirement" : "Securely store client_credentials.",
+      "reference" : ["OAuth2-Sec-10.1", "OAuth2-TM-5.1.4.1", "OAuth2-TM-5.3.1", "OAuth2-TM-5.3.3"]
+    },
+    {
+      "area" : "Registration",
+      "step" : "Client credentials",
+      "priority" : "Must",
+      "requirement" : "(When the OP lets the Client choose secret value) Ensure the client_secret has sufficient entropy.",
+      "reference" : ["OIDC-Sec-16.19"]
+    },
+    {
+      "area" : "Registration",
+      "step" : "Redirect URI",
+      "priority" : "Could",
+      "requirement" : "Register a Redirect URI of the form https://domain/path without any port or query part.  The URI path and domain must be lowercase and not contain any characters that are or would require URI encoding.",
+      "reference" : []
+    },
+    {
+      "area" : "Registration",
+      "step" : "Redirect URI",
+      "priority" : "Must",
+      "requirement" : "(When multiple OP are used) Use a specific Client redirect endpoint per OP.",
+      "reference" : []
+    },
+    {
+      "area" : "",
+      "step" : "",
+      "priority" : "",
+      "requirement" : "",
+      "reference" : []
+    }
+  ]
+}
