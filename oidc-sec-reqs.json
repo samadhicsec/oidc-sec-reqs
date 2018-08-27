@@ -17,16 +17,121 @@
     {
       "area" : "Registration",
       "step" : "Redirect URI",
-      "priority" : "Could",
+      "priority" : "Must",
       "requirement" : "Register a Redirect URI of the form https://domain/path without any port or query part.  The URI path and domain must be lowercase and not contain any characters that are or would require URI encoding.",
       "reference" : []
     },
     {
       "area" : "Registration",
       "step" : "Redirect URI",
-      "priority" : "Must",
+      "priority" : "Could",
       "requirement" : "(When multiple OP are used) Use a specific Client redirect endpoint per OP.",
+      "reference" : ["OAuth2-BSP-2.1para3"]
+    },
+    {
+      "area" : "Configuration",
+      "step" : ".well-known endpoint",
+      "priority" : "Must",
+      "requirement" : "Support getting OP configuration from /.well-known/openid-configuration endpoint.",
+      "reference" : ["OIDC-Comp-rp-discovery-openid-configuration"]
+    },
+    {
+      "area" : "Configuration",
+      "step" : ".well-known endpoint",
+      "priority" : "Must",
+      "requirement" : "Ensure /.well-known/openid-configuration endpoint URL uses HTTPS.",
       "reference" : []
+    },
+    {
+      "area" : "Configuration",
+      "step" : ".well-known endpoint",
+      "priority" : "Must",
+      "requirement" : "Support configuring OP's ID Token's signing algorithms from /.well-known/openid-configuration endpoint.",
+      "reference" : []
+    },
+    {
+      "area" : "Configuration",
+      "step" : "JWKS",
+      "priority" : "Must",
+      "requirement" : "Support configuring OP's JSON Web Key Set (JWKS) URL from /.well-known/openid-configuration endpoint.",
+      "reference" : ["OIDC-Comp-rp-discovery-jwks_uri-keys"]
+    },
+    {
+      "area" : "Configuration",
+      "step" : "JWKS",
+      "priority" : "Must",
+      "requirement" : "JWKS URL endpoint uses HTTPS.",
+      "reference" : []
+    },
+    {
+      "area" : "Deployment",
+      "step" : "Hardening",
+      "priority" : "Must",
+      "requirement" : "Harden the Client deployment according to industry (or other relevant) standards.",
+      "reference" : ["OAuth2-TM-5.1.4.1", "OAuth2-TM-5.3.2"]
+    },
+    {
+      "area" : "Authentication Redirect Request",
+      "step" : "Endpoint",
+      "priority" : "Must",
+      "requirement" : "OP Authentication Endpoint URL must be  HTTPS.",
+      "reference" : ["OIDC-Sec-16.17", "OAuth2-Sec-10.3", "OAuth2-Sec-10.5", "OAuth2-Sec-10.9", "OAuth2-TM-5.1.1", "OAuth2-TM-5.1.2"]
+    },
+    {
+      "area" : "Authentication Redirect Request",
+      "step" : "Parameters",
+      "priority" : "Must",
+      "requirement" : "Send a nonce as part of the Authentication Request.  The Client can remain stateless by additionally storing the nonce in a cookie (with secure and httponly attributes set).",
+      "reference" : ["OIDC-TV-11", "OIDC-Comp-rp-nonce-invalid"]
+    },
+    {
+      "area" : "Authentication Redirect Request",
+      "step" : "Parameters",
+      "priority" : "Must",
+      "requirement" : "Ensure the nonce has sufficient entropy as to be unguessable.  A random 128 bit (16 byte) value is sufficient.",
+      "reference" : []
+    },
+    {
+      "area" : "Authentication Redirect Request",
+      "step" : "Parameters",
+      "priority" : "Must",
+      "requirement" : "Use the authorisation code flow i.e. set response_type=code.",
+      "reference" : ["OIDC-Sec-16.5", "OIDC-Sec-16.10", "OIDC-Comp-rp-response_type-code"]
+    },
+    {
+      "area" : "Authentication Redirect Request",
+      "step" : "Parameters",
+      "priority" : "Must",
+      "requirement" : "Ensure the 'state' parameter does not contain sensitive data, or the data is encrypted and tied to the flow.",
+      "reference" : ["OAuth2-Sec-10.8"]
+    },
+    {
+      "area" : "Authentication Redirect Request",
+      "step" : "Parameters",
+      "priority" : "Must",
+      "requirement" : "Use the state parameter to mitigate CSRF attacks.  For instance, set the state to be the hash of the unauthenticated session cookie (assuming it is stored in a cookie with the secure and httponly attributes set, and the session value is unpredictable to an attacker).",
+      "reference" : ["OAuth2-Sec-10.12", "OAuth2-TM-5.3.5", "OAuth2-BSP-2.1para3"]
+    },
+    {
+      "area" : "Authentication Redirect Request",
+      "step" : "Parameters",
+      "priority" : "Should",
+      "requirement" : "(When multiple OP are used) Bind the 'state' parameter to the OP and nonce.",
+      "reference" : ["OAuth2-BSP-2.1para3"]
+    },
+    {
+      "area" : "Authentication Redirect Request",
+      "step" : "Parameters",
+      "priority" : "Must",
+      "requirement" : "(When supported by the Authorisation Server) Use Proof Key for Code Exchange (PKCE) [RFC7636].",
+      "reference" : ["OAuth2-BSP-2.1para5"]
+    },
+    {
+      "area" : "Authentication Redirect Request",
+      "step" : "Parameters",
+      "priority" : "Should",
+      "requirement" : "Support a configurable set of claims in the scope parameter.",
+      "reference" : ["OIDC-Comp-rp-scope-userinfo-claims"]
     },
     {
       "area" : "",
