@@ -1,0 +1,3528 @@
+[
+  {
+    "id": 0,
+    "section": [
+      "2"
+    ],
+    "recommendation": "Sub claim is a locally unique and never reassigned identifier within the Issuer for the End-User",
+    "role": [
+      "Issuer"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "user-registration"
+    ],
+    "priority": "Must",
+    "requirement": "Ensure the sub claim for an End-User is unique and never reassigned"
+  },
+  {
+    "id": 1,
+    "section": [
+      "2"
+    ],
+    "recommendation": "Sub claim MUST NOT exceed 255 ASCII characters in length",
+    "role": [
+      "Issuer"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "user-registration"
+    ],
+    "priority": "Must",
+    "requirement": "Ensure the sub claim is not greater than 255 ASCII characters"
+  },
+  {
+    "id": 2,
+    "section": [
+      "2"
+    ],
+    "recommendation": "Aud claim MUST contain the OAuth 2.0 client_id of the Relying Party",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-creation"
+    ],
+    "priority": "Must",
+    "requirement": "Ensure the aud claim contains the client_id of the Relying Party"
+  },
+  {
+    "id": 3,
+    "section": [
+      "2"
+    ],
+    "recommendation": "Expiration time on or after which the ID Token MUST NOT be accepted for processing",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the current data/time is before the time in the exp claim. Accounting for clock skew is permitted."
+  },
+  {
+    "id": 4,
+    "section": [
+      "2",
+      "15.1"
+    ],
+    "recommendation": "auth_time claim MUST be present if a max_age request is made or when auth_time is requested as an Essential Claim",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the auth_time claim is present if a max_age request is made or when auth_time is requested as an Essential Claim "
+  },
+  {
+    "id": 5,
+    "section": [
+      "2"
+    ],
+    "recommendation": "If present in the ID Token, Clients MUST verify that the nonce Claim Value is equal to the value of the nonce parameter sent in the Authentication Request",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the nonce as part of the ID Token validation. Nonces are case sensitive."
+  },
+  {
+    "id": 6,
+    "section": [
+      "2"
+    ],
+    "recommendation": "If present in the Authentication Request, authorization-servers MUST include a nonce Claim in the ID Token with the Claim Value being the nonce value sent in the Authentication Request.",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code ",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-creation",
+      ""
+    ],
+    "priority": "Must",
+    "requirement": "Ensure the nonce claim in the ID Token is the same as the nonce received in the Authentication Request"
+  },
+  {
+    "id": 7,
+    "section": [
+      "2"
+    ],
+    "recommendation": "If the azp claim is present, it MUST contain the OAuth 2.0 Client ID of the party the ID Token was issued to",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Validate, if it is present, the azp claim contains the Client Id the party to who the ID Token was issued."
+  },
+  {
+    "id": 8,
+    "section": [
+      "2"
+    ],
+    "recommendation": "ID Tokens MUST be signed using JWS",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Validate that the ID Token is signed using JWS"
+  },
+  {
+    "id": 9,
+    "section": [
+      "2"
+    ],
+    "recommendation": "If the ID Token is encrypted, it MUST be signed then encrypted, with the result being a Nested JWT",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Validate, if the ID Token is encrypted, that the ID Token is signed then encrypted I.e. a Nested JWT."
+  },
+  {
+    "id": 10,
+    "section": [
+      "2"
+    ],
+    "recommendation": "ID Tokens MUST NOT use none as the alg value",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the ID Token was not signed using an alg value of 'none'"
+  },
+  {
+    "id": 11,
+    "section": [
+      "2"
+    ],
+    "recommendation": "ID Tokens SHOULD NOT use the JWS or JWE x5u, x5c, jku, or jwk Header Parameter fields.",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Should",
+    "requirement": "Validate that the JWS or JWE x5u, x5c, jku, or jwk Header Parameter fields are not used in the ID Token"
+  },
+  {
+    "id": 12,
+    "section": [
+      "3.1.2.1",
+      "3.3.2.1"
+    ],
+    "recommendation": "The client_id parameter must be present.",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "web user-agent",
+    "user-agent-client": [
+      "code code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate that the client_id parameter is present and valid"
+  },
+  {
+    "id": 13,
+    "section": [
+      "3.1.2.1",
+      "3.3.2.1"
+    ],
+    "recommendation": "The Redirection URI MUST exactly match one of the Redirection URI values pre-registered for the Client",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Match the client redirection URL to one specified at client registration"
+  },
+  {
+    "id": 14,
+    "section": [
+      "3.1.2.1",
+      "3.3.2.1"
+    ],
+    "recommendation": "The Redirection URI SHOULD use the https scheme",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Should",
+    "requirement": "Use https scheme for the redirect_uri parameter"
+  },
+  {
+    "id": 15,
+    "section": [
+      "3.1.2.1",
+      "3.3.2.1"
+    ],
+    "recommendation": "Use the state parameter to provide Cross-Site Request Forgery (CSRF, XSRF) mitigation by cryptographically binding the value of this parameter with a browser cookie.",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Should",
+    "requirement": "Use the state parameter to protect against CSRF attacks"
+  },
+  {
+    "id": 16,
+    "section": [
+      "3.1.2.1",
+      "3.3.2.1"
+    ],
+    "recommendation": "Sufficient entropy MUST be present in the nonce values used to prevent attackers from guessing values.",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Generate nonce with sufficient entropy to avoid attackers guessing the value"
+  },
+  {
+    "id": 17,
+    "section": [
+      "3.1.2.1",
+      "3.3.2.1",
+      "15.1"
+    ],
+    "recommendation": "If the prompt='none' the authorization-server MUST NOT display any authentication or consent user interface pages.",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Ensure no authentication or consent user interface pages are displayed if prompt='none'"
+  },
+  {
+    "id": 18,
+    "section": [
+      "3.1.2.1",
+      "3.3.2.1",
+      "15.1"
+    ],
+    "recommendation": "If the prompt includes 'login the authorization-server SHOULD prompt the End-User for reauthentication",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Should",
+    "requirement": "Prompt the End-User for reauthentication if prompt includes 'login"
+  },
+  {
+    "id": 19,
+    "section": [
+      "3.1.2.1",
+      "3.3.2.1",
+      "15.1"
+    ],
+    "recommendation": "If the prompt includes 'login but the End-User could not be authenticated then an error MUST be returned.",
+    "role": [
+      "authorization-server",
+      ""
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Return an error if prompt includes 'login but the End-User could not be re-authenticated"
+  },
+  {
+    "id": 20,
+    "section": [
+      "3.1.2.1",
+      "3.3.2.1",
+      "15.1"
+    ],
+    "recommendation": "If the prompt includes consent' the authorization-server SHOULD prompt the End-User for consent",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Should",
+    "requirement": "Prompt the End-User for consent if prompt includes consent' "
+  },
+  {
+    "id": 21,
+    "section": [
+      "3.1.2.1",
+      "3.3.2.1",
+      "15.1"
+    ],
+    "recommendation": "If the prompt includes consent' but no consent is obtained then an error MUST be returned.",
+    "role": [
+      "authorization-server",
+      ""
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Return an error if prompt includes consent' but no consent is obtained"
+  },
+  {
+    "id": 22,
+    "section": [
+      "3.1.2.1",
+      "3.3.2.1",
+      "15.1"
+    ],
+    "recommendation": "If the prompt includes 'select_account' the authorization-server SHOULD prompt the End-User to select a user account",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Should",
+    "requirement": "Prompt the End-User to select a user account if prompt includes 'select_account'"
+  },
+  {
+    "id": 23,
+    "section": [
+      "3.1.2.1",
+      "3.3.2.1",
+      "15.1"
+    ],
+    "recommendation": "If the prompt includes 'select_account' but no account is selected then an error MUST be returned.",
+    "role": [
+      "authorization-server",
+      ""
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Return an error if prompt includes 'select_account' but no account is selected"
+  },
+  {
+    "id": 24,
+    "section": [
+      "3.1.2.1",
+      "3.3.2.1",
+      "15.1"
+    ],
+    "recommendation": "If the prompt includes 'none' and any other value an error is returned",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request",
+      ""
+    ],
+    "priority": "Must",
+    "requirement": "Return an error is prompt includes 'none' and any other value"
+  },
+  {
+    "id": 25,
+    "section": [
+      "3.1.2.1",
+      "3.3.2.1",
+      "15.1"
+    ],
+    "recommendation": "If max_age is specified, and the last time the End-User was actively authenticated by the OP is greater than this value the OP MUST attempt to actively re-authenticate the End-User.",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Re-authenticate the End-User if max-age is specified and is less than the elapsed time since the last active authentication"
+  },
+  {
+    "id": 26,
+    "section": [
+      "3.1.2.1",
+      "3.3.2.1"
+    ],
+    "recommendation": "When max_age is used, the ID Token returned MUST include an auth_time Claim Value",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Validate auth_time is present in the ID Token when max_age was part of the authentication request"
+  },
+  {
+    "id": 27,
+    "section": [
+      "3.1.2.1",
+      "3.3.2.1"
+    ],
+    "recommendation": "If id_token_hint is specified, and the End-User identified by the ID Token is not logged in nor is logged in by the request, then an error SHOULD be returned",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Should",
+    "requirement": "Return an error, when id_token_hint is specified, and if the End-User identified by the ID Token is not logged in nor is logged in by the request"
+  },
+  {
+    "id": 28,
+    "section": [
+      "3.1.2.2",
+      "3.3.2.2"
+    ],
+    "recommendation": "The authorization-server MUST validate all the OAuth 2.0 parameters according to the OAuth 2.0 specification.",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate all the OAuth 2.0 parameters according to the OAuth 2.0 specification"
+  },
+  {
+    "id": 29,
+    "section": [
+      "3.1.2.2",
+      "3.3.2.2"
+    ],
+    "recommendation": "Verify that all the REQUIRED parameters are present",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Verify that all the REQUIRED parameters are present "
+  },
+  {
+    "id": 30,
+    "section": [
+      "3.1.2.2",
+      "3.3.2.2"
+    ],
+    "recommendation": "If the sub claim is requested, a positive response is only returned if the End-User identified has the requested value",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Only return a positive response, if the sub claim is requested, if the End-User identified matches the requested sub value."
+  },
+  {
+    "id": 31,
+    "section": [
+      "3.1.2.3",
+      "3.3.2.3"
+    ],
+    "recommendation": "The authorization-server MUST attempt to Authenticate the End-User if the End-User is not already Authenticated",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Authenticate the End-User if they are not already authenticated"
+  },
+  {
+    "id": 32,
+    "section": [
+      "3.1.2.3",
+      "3.3.2.3",
+      "15.1"
+    ],
+    "recommendation": "The authorization-server MUST attempt to Authenticate or reauthenticate (if logged in) the End-User if prompt=login",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Attempt to authenticate or reauthenticate (if already logged in) if prompt=login"
+  },
+  {
+    "id": 33,
+    "section": [
+      "3.1.2.3",
+      "3.3.2.3",
+      "15.1"
+    ],
+    "recommendation": "The authorization-server MUST NOT interact with the End-User if the Authentication Request contains prompt=none",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Not interact with the End-User if prompt=none"
+  },
+  {
+    "id": 34,
+    "section": [
+      "3.1.2.3",
+      "3.3.2.3"
+    ],
+    "recommendation": "The authorization-server MUST employ appropriate measures against Cross-Site Request Forgery and Clickjacking as, described in Sections 10.12 and 10.13 of <a href=\"https://openid.net/specs/openid-connect-core-1_0.html#RFC6749\" target=\"_blank\">OAuth 2.0</a> [RFC6749].",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Prevent Cross-Site Request Forgery and Clickjacking"
+  },
+  {
+    "id": 35,
+    "section": [
+      "3.1.2.4",
+      "3.3.2.4"
+    ],
+    "recommendation": "The authorization-server MUST obtain an authorization decision before releasing information to the Relying Party",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Obtain an authorization decision form the End-User before giving a positive response"
+  },
+  {
+    "id": 36,
+    "section": [
+      "3.1.2.7",
+      "3.3.2.7"
+    ],
+    "recommendation": "The Client MUST validate the response according to RFC 6749, especially Sections 4.1.2 and 10.12",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-response"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the response according to RFC 6749, especially Sections 4.1.2 and 10.12 "
+  },
+  {
+    "id": 37,
+    "section": [
+      "3.1.3.1",
+      "3.3.3.1"
+    ],
+    "recommendation": "The client MUST authenticate to the Token Endpoint using the authentication method registered for its client_id",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Authenticate to the Token Endpoint using the method agreed at registration, or client_secret_basic by default"
+  },
+  {
+    "id": 38,
+    "section": [
+      "3.1.3.2",
+      "3.3.3.2"
+    ],
+    "recommendation": "Authenticate the Client",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Authenticate the client using an approved client authentication method"
+  },
+  {
+    "id": 39,
+    "section": [
+      "3.1.3.2",
+      "3.3.3.2"
+    ],
+    "recommendation": "Ensure the Authorization Code was issued to the authenticated Client",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Ensure the Authorization Code was issued to the authenticated Client"
+  },
+  {
+    "id": 40,
+    "section": [
+      "3.1.3.2",
+      "3.3.3.2"
+    ],
+    "recommendation": "Verify that the Authorization Code is valid",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Verify that the Authorization Code is valid"
+  },
+  {
+    "id": 41,
+    "section": [
+      "3.1.3.2",
+      "3.3.3.2"
+    ],
+    "recommendation": "Verify that the Authorization Code has not been previously used",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "token-request",
+      ""
+    ],
+    "priority": "Should",
+    "requirement": "Verify that the Authorization Code has not been previously used"
+  },
+  {
+    "id": 42,
+    "section": [
+      "3.1.3.2",
+      "3.3.3.2"
+    ],
+    "recommendation": "Ensure that the redirect_uri parameter value is identical to the redirect_uri parameter value that was included in the initial Authorization Request",
+    "role": [
+      "authorization-server",
+      ""
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Ensure that the redirect_uri parameter value is identical to the redirect_uri parameter value that was included in the initial Authorization Request"
+  },
+  {
+    "id": 43,
+    "section": [
+      "3.1.3.2",
+      "3.3.3.2"
+    ],
+    "recommendation": "Verify that the Authorization Code used was issued in response to an OpenID Connect Authentication Request",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Verify that the Authorization Code used was issued in response to an OpenID Connect Authentication Request"
+  },
+  {
+    "id": 44,
+    "section": [
+      "3.1.3.3",
+      "3.3.3.3",
+      "12.2"
+    ],
+    "recommendation": "The token_type response parameter value MUST be Bearer",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "token-response",
+      "refresh-token-response"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the token_type is \"Bearer\""
+  },
+  {
+    "id": 45,
+    "section": [
+      "3.1.3.3",
+      "3.3.3.3",
+      "12.2"
+    ],
+    "recommendation": "The id_token response parameter must be present",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "token-response",
+      "refresh-token-response"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the id_token is present"
+  },
+  {
+    "id": 46,
+    "section": [
+      "3.1.3.3",
+      "3.3.3.3",
+      "12.2"
+    ],
+    "recommendation": "The HTTP header Cache-Control must have a value of \"no-store\"",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "token-response",
+      "refresh-token-response"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the HTTP header Cache-Control has a value of \"no-store\""
+  },
+  {
+    "id": 47,
+    "section": [
+      "3.1.3.3",
+      "3.3.3.3",
+      "12.2"
+    ],
+    "recommendation": "The HTTP header Pragma must have a value of \"no-cache\"",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "token-response",
+      "refresh-token-response"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the HTTP header Pragma has a value of \"no-cache\""
+  },
+  {
+    "id": 48,
+    "section": [
+      "3.1.3.7",
+      "3.3.2.12",
+      "3.3.3.5",
+      "3.3.3.7"
+    ],
+    "recommendation": "If the ID Token is encrypted, decrypt it using the keys and algorithms that the Client specified during Registration that the OP was to use to encrypt the ID Token. If encryption was negotiated with the OP at Registration time and the ID Token is not encrypted, the RP SHOULD reject it.",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Reject encrypted ID Tokens (if not configured)"
+  },
+  {
+    "id": 49,
+    "section": [
+      "3.1.3.7",
+      "3.3.2.12",
+      "3.3.3.5",
+      "3.3.3.7"
+    ],
+    "recommendation": "The Issuer Identifier for the OpenID Provider (which is typically obtained during Discovery) MUST exactly match the value of the iss (issuer) Claim.",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the iss claim against the issuer from the OIDC Configuration"
+  },
+  {
+    "id": 50,
+    "section": [
+      "3.1.3.7",
+      "3.3.2.12",
+      "3.3.3.5",
+      "3.3.3.7"
+    ],
+    "recommendation": "The Client MUST validate that the aud (audience) Claim contains its client_id value registered at the Issuer identified by the iss (issuer) Claim as an audience. The aud (audience) Claim MAY contain an array with more than one element. The ID Token MUST be rejected if the ID Token does not list the Client as a valid audience, or if it contains additional audiences not trusted by the Client.",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the aud claim against the client_id registered to the Issuer identified by the iss claim."
+  },
+  {
+    "id": 51,
+    "section": [
+      "3.1.3.7",
+      "3.3.2.12",
+      "3.3.3.5",
+      "3.3.3.7"
+    ],
+    "recommendation": "If the ID Token contains multiple audiences, the Client SHOULD verify that an azp Claim is present.",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Should",
+    "requirement": "Validate the azp claim is present if the aud claim is multi-valued"
+  },
+  {
+    "id": 52,
+    "section": [
+      "3.1.3.7",
+      "3.3.2.12",
+      "3.3.3.5",
+      "3.3.3.7"
+    ],
+    "recommendation": "If an azp (authorized party) Claim is present, the Client SHOULD verify that its client_id is the Claim Value.",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Should",
+    "requirement": "Validate azp claim (if present) equals the Client's client_id."
+  },
+  {
+    "id": 53,
+    "section": [
+      "3.1.3.7",
+      "3.3.2.12",
+      "3.3.3.5",
+      "3.3.3.7"
+    ],
+    "recommendation": "If the ID Token is received via direct communication between the Client and the Token Endpoint (which it is in this flow), the TLS server validation MAY be used to validate the issuer in place of checking the token signature. The Client MUST validate the signature of all other ID Tokens according to [JWS] using the algorithm JWS specified in the JWT alg Header Parameter. The Client MUST use the keys provided by the Issuer.",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the ID Token signature using the JWKS key from JWKS URL specified in the OIDC Configuration"
+  },
+  {
+    "id": 54,
+    "section": [
+      "3.1.3.7",
+      "3.3.2.12",
+      "3.3.3.5",
+      "3.3.3.7"
+    ],
+    "recommendation": "The alg value SHOULD be the default of RS256 or the algorithm sent by the Client in the id_token_signed_response_alg parameter during Registration.",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Should",
+    "requirement": "Validate the the JWT header alg value is one declared supported in the OIDC Configuration."
+  },
+  {
+    "id": 55,
+    "section": [
+      "3.1.3.7",
+      "3.3.2.12",
+      "3.3.3.5",
+      "3.3.3.7"
+    ],
+    "recommendation": "If the JWT alg Header Parameter uses a MAC based algorithm such as HS256, HS384, or HS512, the octets of the UTF-8 representation of the client_secret corresponding to the client_id contained in the aud (audience) Claim are used as the key to validate the signature. For MAC based algorithms, the behavior is unspecified if the aud is multi-valued or if an azp value is present that is different than the aud value.",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Validate that if a MAC based alg is used, then the aud claim is not multi-valued, and the azp claim is not present."
+  },
+  {
+    "id": 56,
+    "section": [
+      "3.1.3.7",
+      "3.3.2.12",
+      "3.3.3.5",
+      "3.3.3.7"
+    ],
+    "recommendation": "The current time MUST be before the time represented by the exp Claim.",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the exp time claim. "
+  },
+  {
+    "id": 57,
+    "section": [
+      "3.1.3.7",
+      "3.3.2.12",
+      "3.3.3.5",
+      "3.3.3.7"
+    ],
+    "recommendation": "The iat Claim can be used to reject tokens that were issued too far away from the current time, limiting the amount of time that nonces need to be stored to prevent attacks. The acceptable range is Client specific.",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the iat time claim. The iat time claim must not differ from the current by more than a per-OP configurable amount. Default to 5 mins."
+  },
+  {
+    "id": 58,
+    "section": [
+      "3.1.3.7",
+      "3.3.2.12",
+      "3.3.3.5",
+      "3.3.3.7"
+    ],
+    "recommendation": "If a nonce value was sent in the Authentication Request, a nonce Claim MUST be present and its value checked to verify that it is the same value as the one that was sent in the Authentication Request.",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the nonce as part of the ID Token validation. Nonces are case sensitive."
+  },
+  {
+    "id": 59,
+    "section": [
+      "3.1.3.7",
+      "3.3.2.12",
+      "3.3.3.5",
+      "3.3.3.7"
+    ],
+    "recommendation": "The Client SHOULD check the nonce value for replay attacks. The precise method for detecting replay attacks is Client specific.",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Should",
+    "requirement": "Validate the nonce has not been used before."
+  },
+  {
+    "id": 60,
+    "section": [
+      "3.1.3.7",
+      "3.3.2.12",
+      "3.3.3.5",
+      "3.3.3.7"
+    ],
+    "recommendation": "If the acr Claim was requested, the Client SHOULD check that the asserted Claim Value is appropriate. The meaning and processing of acr Claim Values is out of scope for this specification.",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Should",
+    "requirement": "Validate the acr claim (if acr claim was requested)."
+  },
+  {
+    "id": 61,
+    "section": [
+      "3.1.3.7",
+      "3.3.2.12",
+      "3.3.3.5",
+      "3.3.3.7"
+    ],
+    "recommendation": "If the auth_time Claim was requested, either through a specific request for this Claim or by using the max_age parameter, the Client SHOULD check the auth_time Claim value and request re-authentication if it determines too much time has elapsed since the last End-User authentication.",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the auth_time (if present), does NOT differ from the current by more than a per-OP configured amount. Default to 5 mins"
+  },
+  {
+    "id": 62,
+    "section": [
+      "3.1.3.8",
+      "3.3.3.9"
+    ],
+    "recommendation": "If the ID Token contains an at_hash Claim, the Client MAY use it to validate the Access Token",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Should",
+    "requirement": "Validate the at_hash (if present)"
+  },
+  {
+    "id": 63,
+    "section": [
+      "3.2.2.11",
+      "3.3.2.12"
+    ],
+    "recommendation": "The Client MUST validate the signature of the ID Token",
+    "role": [
+      "client"
+    ],
+    "web-client": "",
+    "user-agent-client": [
+      "code id_token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the signature of the ID Token"
+  },
+  {
+    "id": 64,
+    "section": [
+      "3.2.2.11",
+      "3.3.2.12"
+    ],
+    "recommendation": "MUST check the nonce matches the one sent in the authorization request",
+    "role": [
+      "client"
+    ],
+    "web-client": "",
+    "user-agent-client": [
+      "code id_token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Check the nonce matches the one sent in the authorization request"
+  },
+  {
+    "id": 65,
+    "section": [
+      "3.2.2.11",
+      "3.3.2.12"
+    ],
+    "recommendation": "SHOULD check the nonce for replay attacks",
+    "role": [
+      "client"
+    ],
+    "web-client": "",
+    "user-agent-client": [
+      "code id_token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Should",
+    "requirement": "Check the nonce for replay attacks"
+  },
+  {
+    "id": 66,
+    "section": [
+      "3.3.2.8"
+    ],
+    "recommendation": "Verify that the response conforms to Section 5 of \"OAuth 2.0 Multiple Response Type Encoding Practices\"",
+    "role": [
+      "client"
+    ],
+    "web-client": "",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn_response"
+    ],
+    "priority": "Must",
+    "requirement": "Verify that the response conforms to Section 5 of \"OAuth 2.0 Multiple Response Type Encoding Practices\""
+  },
+  {
+    "id": 67,
+    "section": [
+      "3.3.2.9",
+      "16.11"
+    ],
+    "recommendation": "Validate the Access Token",
+    "role": [
+      "client"
+    ],
+    "web-client": "",
+    "user-agent-client": [
+      "code id_token token"
+    ],
+    "step": [
+      "authn_response"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the at_hash in the ID Token matches the calculated value from the Access Token"
+  },
+  {
+    "id": 68,
+    "section": [
+      "3.3.2.10",
+      "16.11"
+    ],
+    "recommendation": "Validate the code",
+    "role": [
+      "client"
+    ],
+    "web-client": "",
+    "user-agent-client": [
+      "code id_tokencode id_token token"
+    ],
+    "step": [
+      "authn_response"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the c_hash in the ID Token matches the calculated value from the code"
+  },
+  {
+    "id": 69,
+    "section": [
+      "3.3.2.11"
+    ],
+    "recommendation": "Nonce must be present in ID Token",
+    "role": [
+      "client"
+    ],
+    "web-client": "",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Ensure the nonce is present in the ID Token"
+  },
+  {
+    "id": 70,
+    "section": [
+      "3.3.2.11"
+    ],
+    "recommendation": "at_hash must be present in ID Token",
+    "role": [
+      "client"
+    ],
+    "web-client": "",
+    "user-agent-client": [
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Ensure the at_hash is present in the ID Token"
+  },
+  {
+    "id": 71,
+    "section": [
+      "3.3.2.11"
+    ],
+    "recommendation": "c_hash must be present in ID Token",
+    "role": [
+      "client"
+    ],
+    "web-client": "",
+    "user-agent-client": [
+      "code id_token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Ensure the c_hash is present in the ID Token"
+  },
+  {
+    "id": 72,
+    "section": [
+      "3.3.3.6"
+    ],
+    "recommendation": "The iss and sub Claim Values MUST be identical in both ID Tokens.",
+    "role": [
+      "client"
+    ],
+    "web-client": "",
+    "user-agent-client": [
+      "code id_token",
+      "code id_token token"
+    ],
+    "step": [
+      "token-response"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the iss and sub claims are identical in the ID Tokens returned from the Authorization Endpoint and the Token Endpoint"
+  },
+  {
+    "id": 73,
+    "section": [
+      "3.3.3.6"
+    ],
+    "recommendation": "Any common claims SHOULD be identical in both ID Tokens.",
+    "role": [
+      "client"
+    ],
+    "web-client": "",
+    "user-agent-client": [
+      "code id_token",
+      "code id_token token"
+    ],
+    "step": [
+      "token-response"
+    ],
+    "priority": "Should",
+    "requirement": "Validate any common claims are identical if an ID Token is returned from the Authorization Endpoint and from the Token Endpoint"
+  },
+  {
+    "id": 74,
+    "section": [
+      "4"
+    ],
+    "recommendation": "If Client supports 3rd party initiated login this it SHOULD employ frame busting and other techniques to prevent End-Users from being logged in by third party sites without their knowledge through attacks such as Clickjacking",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [],
+    "step": [
+      "login-init"
+    ],
+    "priority": "Should",
+    "requirement": "Ensure client's initiate_login_uri (if used) employs frame-busting techniques"
+  },
+  {
+    "id": 75,
+    "section": [
+      "5.3"
+    ],
+    "recommendation": "The UserInfo Endpoint must use TLS",
+    "role": [
+      "client",
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "userinfo-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate that the UserInfo Endpoint scheme is https"
+  },
+  {
+    "id": 76,
+    "section": [
+      "5.3"
+    ],
+    "recommendation": "The UserInfo Endpoint must accept Access Tokens as Bearer tokens",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "userinfo-request"
+    ],
+    "priority": "Must",
+    "requirement": "Accept Access Tokens as bearer tokens on the UserInfo Endpoint"
+  },
+  {
+    "id": 77,
+    "section": [
+      "5.3"
+    ],
+    "recommendation": "The UserInfo Endpoint SHOULD support CORS",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "userinfo-request"
+    ],
+    "priority": "Should",
+    "requirement": "Support CORS on the UserInfo Endpoint"
+  },
+  {
+    "id": 78,
+    "section": [
+      "5.3.2"
+    ],
+    "recommendation": "Due to the possibility of token substitution attacks, the UserInfo Response is not guaranteed to be about the End-User identified by the sub (subject) element of the ID Token. The sub Claim in the UserInfo Response MUST be verified to exactly match the sub Claim in the ID Token; if they do not match, the UserInfo Response values MUST NOT be used.",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "userinfo-response"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the sub from data returned from the UserInfo Endpoint matches the sub from the ID Token"
+  },
+  {
+    "id": 79,
+    "section": [
+      "5.3.2"
+    ],
+    "recommendation": "The UserInfo Endpoint MUST return a content-type header to indicate which format is being returned, which MUST be application/json if the response body is a text JSON object",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "userinfo-response"
+    ],
+    "priority": "Must",
+    "requirement": "Set a content-type header to indicate which format is being returned, which MUST be application/json if the response body is a text JSON object"
+  },
+  {
+    "id": 80,
+    "section": [
+      "5.3.2"
+    ],
+    "recommendation": "The UserInfo Endpoint response SHOULD be encoded using UTF-8",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "userinfo-response"
+    ],
+    "priority": "Should",
+    "requirement": "Use UTF-8 for the UserInfo Endpoint response body encoding"
+  },
+  {
+    "id": 81,
+    "section": [
+      "5.3.2"
+    ],
+    "recommendation": "The iss value SHOULD be the OP's Issuer Identifier URL.",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "userinfo-response"
+    ],
+    "priority": "Should",
+    "requirement": "Validate the iss claim is the OP issue value from OIDC Configurataion, if UserInfo Endpoint response is signed"
+  },
+  {
+    "id": 82,
+    "section": [
+      "5.3.2"
+    ],
+    "recommendation": "The aud value SHOULD be or include the RP's Client ID value.",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "userinfo-response"
+    ],
+    "priority": "Should",
+    "requirement": "Validate the aud claim is/includes the Client's ID, if UserInfo Endpoint response is signed"
+  },
+  {
+    "id": 83,
+    "section": [
+      "5.3.4"
+    ],
+    "recommendation": "",
+    "role": [],
+    "web-client": "",
+    "user-agent-client": [],
+    "step": [],
+    "priority": "",
+    "requirement": ""
+  },
+  {
+    "id": 84,
+    "section": [
+      "5.4"
+    ],
+    "recommendation": "Verify that the OP that responded was the intended OP through a TLS server certificate check",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "userinfo-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the certificate used by the UserInfo Endpoint"
+  },
+  {
+    "id": 85,
+    "section": [
+      "5.4"
+    ],
+    "recommendation": "If the response was signed, the Client SHOULD validate the signature according to JWS",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "userinfo-response"
+    ],
+    "priority": "Should",
+    "requirement": "Validate the signature of the UserInfo Endpoint response, if it was signed"
+  },
+  {
+    "id": 86,
+    "section": [
+      "5.7"
+    ],
+    "recommendation": "The sub (subject) and iss (issuer) Claims, used together, are the only Claims that an RP can rely upon as a stable identifier for the End-User",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-response",
+      "token-response",
+      "userinfo-response"
+    ],
+    "priority": "Must",
+    "requirement": "Only use the combination of iss and sub, as a unique identifier for the user"
+  },
+  {
+    "id": 87,
+    "section": [
+      "6"
+    ],
+    "recommendation": "If request or request_uri is used, the other MUST NOT be used in the same request.",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Not make an authentication request with both the request and request_uri parameters"
+  },
+  {
+    "id": 88,
+    "section": [
+      "6.1",
+      "6.2"
+    ],
+    "recommendation": "The response_type and client_id parameters must match the corresponding values in the (referenced) Request Object.",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the response_type and client_id URL parameters match the corresponding values in the Request Object"
+  },
+  {
+    "id": 89,
+    "section": [
+      "6.1",
+      "6.2"
+    ],
+    "recommendation": "Regardless if a (referenced) Request Object is passed, a scope parameter MUST always be passed using the OAuth 2.0 request syntax containing the openid scope value",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate a scope URL parameter is present, regardless of whether the same field exists in a (referenced) Request Object"
+  },
+  {
+    "id": 90,
+    "section": [
+      "6.1"
+    ],
+    "recommendation": "If signed, the Request Object SHOULD contain the Claims iss (issuer) and aud (audience) as members",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Should",
+    "requirement": "Validate a signed Request Object contains the iss and aud claims"
+  },
+  {
+    "id": 91,
+    "section": [
+      "6.1"
+    ],
+    "recommendation": "The aud value SHOULD be or include the OP's Issuer Identifier URL, in a signed Request Object",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Should",
+    "requirement": "Validate a signed Request object aud value includes the OP's Issuer Identifier URL"
+  },
+  {
+    "id": 92,
+    "section": [
+      "6.1"
+    ],
+    "recommendation": "If a Request Object is signed and encrypted it MUST be signed then encrypted (a nested JWE).",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate a signed and encrypted Request Object was signed then encrypted"
+  },
+  {
+    "id": 93,
+    "section": [
+      "6.2"
+    ],
+    "recommendation": "The entire Request URI MUST NOT exceed 512 ASCII characters.",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the Request URI does not exceed 512 ASCII characters"
+  },
+  {
+    "id": 94,
+    "section": [
+      "6.2"
+    ],
+    "recommendation": "The contents of the resource referenced by the Request URL MUST be a Request Object",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the resource referenced by the Request URI is a Request Object"
+  },
+  {
+    "id": 95,
+    "section": [
+      "6.2"
+    ],
+    "recommendation": "The Request URI must use HTTPS, unless the referenced Request Object is verifiable by the authorization-server",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the Request URI uses HTTPS, or that the referenced Request Object is signed"
+  },
+  {
+    "id": 96,
+    "section": [
+      "6.2.1"
+    ],
+    "recommendation": "If request_uri is used, it must contain an unguessable URI",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Use an unguessable request_uri, if request_uri is used"
+  },
+  {
+    "id": 97,
+    "section": [
+      "6.3.1"
+    ],
+    "recommendation": "If the authorization-server has advertised JWE encryption algorithms in the request_object_encryption_alg_values_supported and request_object_encryption_enc_values_supported elements of its Discovery document, then these must match what is used by the client",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the encrypted Request Object uses values from request_object_encryption_alg_values_supported and request_object_encryption_enc_values_supported"
+  },
+  {
+    "id": 98,
+    "section": [
+      "6.3.1"
+    ],
+    "recommendation": "The authorization-server MUST decrypt the JWT in accordance with the JWE specification",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Decrypt the Request Object in accordance with the JWE specification"
+  },
+  {
+    "id": 99,
+    "section": [
+      "6.3.2"
+    ],
+    "recommendation": "To perform Signature Validation, the alg Header Parameter in the JOSE Header MUST match the value of the request_object_signing_alg set during Client Registration",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the Request Object signature alg matches the request_object_signing_alg set during Client Registration"
+  },
+  {
+    "id": 100,
+    "section": [
+      "6.3.2"
+    ],
+    "recommendation": "The Request Object signature MUST be validated against the appropriate key for that client_id and algorithm.",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the Request Object signature against the appropriate key for that client_id and algorithm"
+  },
+  {
+    "id": 101,
+    "section": [
+      "6.3.3"
+    ],
+    "recommendation": "Where URL parameters and Request Object parameters differ, the Request Object parameters MUST be used.",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Use the Request Object parameters when they differ from the URL parameters"
+  },
+  {
+    "id": 102,
+    "section": [
+      "8"
+    ],
+    "recommendation": "If pairwise subject identifier is supported by the AS then 2 clients will receive different sub claims for the same user",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "Id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Return 2 different sub claims for 2 different clients when the same user authenticates when pairwise Subject Identifier is used"
+  },
+  {
+    "id": 103,
+    "section": [
+      "8.1"
+    ],
+    "recommendation": "If pairwise subject identifier is supported by the AS, and the Client has registered more than 1 redirect_uri, then the client must also register sector_identifier_uri during Dynamic Client Registration",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "client-registration"
+    ],
+    "priority": "Must",
+    "requirement": "Validate client registers a sector_identifier_uri during Dynamic Client Registration if the client registers multiple redirect_uris"
+  },
+  {
+    "id": 104,
+    "section": [
+      "9"
+    ],
+    "recommendation": "If the client can authenticate using client_secret_jwt/private_key_jwt then the iss claim MUST contain a valid client_id, that is also in the sub claim",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the iss and sub claim are a valid client_id when the client authenticates using private_key_jwt"
+  },
+  {
+    "id": 105,
+    "section": [
+      "9"
+    ],
+    "recommendation": "If the client can authenticate using client_secret_jwt/private_key_jwt then the aud claim MUST contain the authorization-server identifier",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the aud claim identifies the authorization-server when the client authenticates using client_secret_jwt/private_key_jwt"
+  },
+  {
+    "id": 106,
+    "section": [
+      "9"
+    ],
+    "recommendation": "If the client can authenticate using client_secret_jwt/private_key_jwt then the aud claim SHOULD contain the URL of the authorization-server's Token Endpoint",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Should",
+    "requirement": "Validate the aud claim contains the URL of the authorization-server's Token Endpoint when the client authenticates using client_secret_jwt/private_key_jwt"
+  },
+  {
+    "id": 107,
+    "section": [
+      "9"
+    ],
+    "recommendation": "If the client can authenticate using client_secret_jwt/private_key_jwt then the exp claim must not have passed",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the exp time has not passed when the client authenticates using client_secret_jwt/private_key_jwt"
+  },
+  {
+    "id": 108,
+    "section": [
+      "9"
+    ],
+    "recommendation": "If the client can authenticate using client_secret_jwt/private_key_jwt then the value of the client_assertion_type parameter MUST be \"urn:ietf:params:oauth:client-assertion-type:jwt-bearer\"",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the client_assertion_type=\"urn:ietf:params:oauth:client-assertion-type:jwt-bearer\" when the client authenticates using client_secret_jwt/private_key_jwt"
+  },
+  {
+    "id": 109,
+    "section": [
+      "9"
+    ],
+    "recommendation": "The authorization-server must not allow a client authentication method of none",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the client has authenticated using an allowed authentication, must does not include the 'none' mthod"
+  },
+  {
+    "id": 110,
+    "section": [
+      "11",
+      "17.4"
+    ],
+    "recommendation": "When the client requests offline_access in the scope the authorization-server MUST obtain user consent",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Get user consent if the client include offline_access in the scope parameter"
+  },
+  {
+    "id": 111,
+    "section": [
+      "12.1"
+    ],
+    "recommendation": "MUST validate the Refresh Token",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "refresh-token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the Refresh Token is valid"
+  },
+  {
+    "id": 112,
+    "section": [
+      "12.1"
+    ],
+    "recommendation": "MUST verify that the Refresh Token was issued to the Client",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "refresh-token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the Refresh Token was issued to the Client"
+  },
+  {
+    "id": 113,
+    "section": [
+      "12.1"
+    ],
+    "recommendation": "Must authenticate the client",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "refresh-token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Authenticate the client"
+  },
+  {
+    "id": 114,
+    "section": [
+      "12.2"
+    ],
+    "recommendation": "If an ID Token is returned with a refresh_token response, then the iss claim must be the same as in the original ID Token",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "refresh-token-response"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the iss claim is the same as from the original ID Token, if a new ID Token is returned"
+  },
+  {
+    "id": 115,
+    "section": [
+      "12.2"
+    ],
+    "recommendation": "If an ID Token is returned with a refresh_token response, then the sub claim must be the same as in the original ID Token",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "refresh-token-response"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the sub claim is the same as from the original ID Token, if a new ID Token is returned"
+  },
+  {
+    "id": 116,
+    "section": [
+      "12.2"
+    ],
+    "recommendation": "If an ID Token is returned with a refresh_token response, then the iat claim must be the time the new ID Token was issued",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "refresh-token-response"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the iat claim is the same as from the original ID Token, if a new ID Token is returned"
+  },
+  {
+    "id": 117,
+    "section": [
+      "12.2"
+    ],
+    "recommendation": "If an ID Token is returned with a refresh_token response, then the aud claim must be the same as in the original ID Token",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "refresh-token-response"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the aud claim is the same as from the original ID Token, if a new ID Token is returned"
+  },
+  {
+    "id": 118,
+    "section": [
+      "12.2"
+    ],
+    "recommendation": "If an ID Token is returned with a refresh_token response, then the auth_time claim must be the same as in the original ID Token",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "refresh-token-response"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the auth_time claim is the same as from the original ID Token, if a new ID Token is returned"
+  },
+  {
+    "id": 119,
+    "section": [
+      "12.2"
+    ],
+    "recommendation": "If an ID Token is returned with a refresh_token response, then the azp claim must be the same as in the original ID Token",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "token-response"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the azd claim is the same as from the original ID Token, if a new ID Token is returned"
+  },
+  {
+    "id": 120,
+    "section": [
+      "12.2"
+    ],
+    "recommendation": "If an ID Token is returned with a refresh_token response, then if the azp claim was not present in the original ID Token, it MUST NOT be present in the new ID Token",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "token-response"
+    ],
+    "priority": "Must",
+    "requirement": "Validate that if the azp claim is not present in the original ID Token, the it is also not present in the new ID Token, if one is returned"
+  },
+  {
+    "id": 121,
+    "section": [
+      "13.1"
+    ],
+    "recommendation": "GET requests received with query parameters must be in application/x-www-form-urlencoded format",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate GET query parameters are encoded with application/x-www-form-urlencoded"
+  },
+  {
+    "id": 122,
+    "section": [
+      "13.2"
+    ],
+    "recommendation": "POST requests received with body parameters must be in application/x-www-form-urlencoded format",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "token-request",
+      "refresh-token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate POST parameters are encoded with application/x-www-form-urlencoded"
+  },
+  {
+    "id": 123,
+    "section": [
+      "14"
+    ],
+    "recommendation": "String comparison operations MUST remove JSON escaping.",
+    "role": [
+      "authorization-server",
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request",
+      "authn-response",
+      "token-request",
+      "refresh-token-request",
+      "token-response",
+      "userinfo-response",
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Compare strings after removing JSON escaping"
+  },
+  {
+    "id": 124,
+    "section": [
+      "14"
+    ],
+    "recommendation": "String comparison operations MUST NOT apply Unicode normalisation to any Unicode code point I neither the JSON string or the string it is being compared to.",
+    "role": [
+      "authorization-server",
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request",
+      "authn-response",
+      "token-request",
+      "refresh-token-request",
+      "token-response",
+      "userinfo-response",
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Compare strings without applying Unicode normalisation to any Unicode code point I neither the JSON string or the string it is being compared to."
+  },
+  {
+    "id": 125,
+    "section": [
+      "14"
+    ],
+    "recommendation": "String comparison operations MUST be performed as a Unicode code point to code point equality comparison.",
+    "role": [
+      "authorization-server",
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request",
+      "authn-response",
+      "token-request",
+      "refresh-token-request",
+      "token-response",
+      "userinfo-response",
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Compare strings as a Unicode code point to code point equality comparison"
+  },
+  {
+    "id": 126,
+    "section": [
+      "14"
+    ],
+    "recommendation": "In several places, this specification uses space delimited lists of strings. In all such cases, a single ASCII space character (0x20) MUST be used as the delimiter.",
+    "role": [
+      "authorization-server",
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request",
+      "authn-response",
+      "token-request",
+      "refresh-token-request",
+      "token-response",
+      "userinfo-response",
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Only allow a single ASCII space character (0x20) as the delimiter for lists of strings"
+  },
+  {
+    "id": 127,
+    "section": [
+      "15.1"
+    ],
+    "recommendation": "MUST support signing ID Tokens with RSA SHA-256",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-response",
+      "token-response"
+    ],
+    "priority": "Must",
+    "requirement": "Support signing ID Tokens with RSA SHA-256"
+  },
+  {
+    "id": 128,
+    "section": [
+      "15.1"
+    ],
+    "recommendation": "MUST support the prompt parameter",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Support the prompt parameter"
+  },
+  {
+    "id": 129,
+    "section": [
+      "15.1"
+    ],
+    "recommendation": "MUST support requests for specific Authentication Context Class Reference values via the acr_values parameter (or at least not fail if it is used)",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Support requests for specific Authentication Context Class Reference values via the acr_values parameter (or at least not fail if it is used)"
+  },
+  {
+    "id": 130,
+    "section": [
+      "15.2"
+    ],
+    "recommendation": "Dynamic OPs MUST publish their public keys as bare JWK keys (which MAY also be accompanied by X.509 representations of those keys).",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "discovery"
+    ],
+    "priority": "Must",
+    "requirement": "Publish public keys as bare JWK keys (which MAY also be accompanied by X.509 representations of those keys), when being Dynamic OP"
+  },
+  {
+    "id": 131,
+    "section": [
+      "15.2"
+    ],
+    "recommendation": "Dynamic OPs MUST support requests made using a Request Object value that is retrieved from a Request URI that is provided with the request_uri parameter",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Support requests made using a Request Object value that is retrieved from a Request URI that is provided with the request_uri parameter, when being Dynamic OP"
+  },
+  {
+    "id": 132,
+    "section": [
+      "15.5.2"
+    ],
+    "recommendation": "The nonce parameter value needs to include per-session state and be unguessable to attackers.",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Link the nonce value to the user session and make it unguessable."
+  },
+  {
+    "id": 133,
+    "section": [
+      "16.1"
+    ],
+    "recommendation": "Clients could protect against compromised user-agents by using request or request_uri parameters",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Could",
+    "requirement": "Use request or request_uri parameters to provide confidentiality and integrity to request parameters."
+  },
+  {
+    "id": 134,
+    "section": [
+      "16.2"
+    ],
+    "recommendation": "Clients can help protect against server's being impersonated by validating the signed or encrypted JWTs",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-response",
+      "token-response"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the ID Token signature using the JWKS key from JWKS URL specified in the OIDC Configuration"
+  },
+  {
+    "id": 135,
+    "section": [
+      "16.3"
+    ],
+    "recommendation": "Relying Party SHOULD validate the signature of the token",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-response",
+      "token-response"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the ID Token signature using the JWKS key from JWKS URL specified in the OIDC Configuration"
+  },
+  {
+    "id": 136,
+    "section": [
+      "16.3",
+      "16.11"
+    ],
+    "recommendation": "Tokens MUST only be sent over TLS connections",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-response",
+      "token-response"
+    ],
+    "priority": "Must",
+    "requirement": "Ensure that the token is sent over a TLS protected channel."
+  },
+  {
+    "id": 137,
+    "section": [
+      "16.4"
+    ],
+    "recommendation": "Access Tokens represent an End-User's authorization and MUST NOT be exposed to unauthorized parties.",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-response",
+      "token-response"
+    ],
+    "priority": "Must",
+    "requirement": "Not disclose the Access Token (if present) to any unauthorised party i.e. only the Client should see the Access Token"
+  },
+  {
+    "id": 138,
+    "section": [
+      "16.5"
+    ],
+    "recommendation": "Avoid disclosure of sensitive data in the token to the user-agent by using the code flow",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Could",
+    "requirement": "Avoid the disclosure of sensitive data in the token by using the authorisation code flow"
+  },
+  {
+    "id": 139,
+    "section": [
+      "16.5"
+    ],
+    "recommendation": "Avoid disclosure of sensitive data in the token by encrypting the token",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "",
+    "user-agent-client": [
+      "code id_token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-response"
+    ],
+    "priority": "Could",
+    "requirement": "Encrypt the ID Token with the Client's public key or shared secret"
+  },
+  {
+    "id": 140,
+    "section": [
+      "16.6"
+    ],
+    "recommendation": "Clients can enforce non-repudiation by validating the signature of the token using a public key of the authorization-server's.",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-response",
+      "token-response"
+    ],
+    "priority": "Could",
+    "requirement": "Validate the ID Token signature using the JWKS key from JWKS URL specified in the OIDC metadata"
+  },
+  {
+    "id": 141,
+    "section": [
+      "16.7"
+    ],
+    "recommendation": "authorization-servers can enforce non-repudiation by require a signed request using a public key of the client's.",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Could",
+    "requirement": "Enforce non-repudiation by require a signed request using a public key of the client's."
+  },
+  {
+    "id": 142,
+    "section": [
+      "16.8"
+    ],
+    "recommendation": "The Access Token SHOULD be audience and scope restricted",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "token-response"
+    ],
+    "priority": "Should",
+    "requirement": "Generate Access Tokens that include scope and have an audience claim with a value of the Resource identifier. Validate the aud claim of the Access Token contains the Client's ID"
+  },
+  {
+    "id": 143,
+    "section": [
+      "16.8"
+    ],
+    "recommendation": "The resource verifies that incoming tokens include its identifier as the audience of the token.",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "userinfo-request"
+    ],
+    "priority": "Should",
+    "requirement": "Validate the audience claim of the Access Token is the authorization-server identifier."
+  },
+  {
+    "id": 144,
+    "section": [
+      "16.9"
+    ],
+    "recommendation": "The token SHOULD include a timestamp and a short validity lifetime that the client validates",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-response",
+      "token-response"
+    ],
+    "priority": "Should",
+    "requirement": "Validate the exp claim to ensure the token has not expired"
+  },
+  {
+    "id": 145,
+    "section": [
+      "16.9"
+    ],
+    "recommendation": "Authorisation codes COULD be single use",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Could",
+    "requirement": "Validate that the authorisation code has not been requested before"
+  },
+  {
+    "id": 146,
+    "section": [
+      "16.10"
+    ],
+    "recommendation": "Ensure a malicious user-agent capturing the authorisation code is useless, by enforcing Client authentication",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Enforce the client authenticates"
+  },
+  {
+    "id": 147,
+    "section": [
+      "16.10"
+    ],
+    "recommendation": "Ensure a malicious user-agent capturing the authorisation code is useless, by supporting encrypted responses",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "token-response"
+    ],
+    "priority": "Could",
+    "requirement": "Encrypt the ID Token to the client, if the client has registered encryption keys."
+  },
+  {
+    "id": 148,
+    "section": [
+      "16.12"
+    ],
+    "recommendation": "Timing Attack",
+    "role": [
+      "authorization-server",
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request",
+      "authn-response",
+      "token-request",
+      "refresh-token-request",
+      "token-response",
+      "userinfo-response",
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Complete all cryptographic operations in full before terminating due to errors and not respond with detailed error information (in the case of an error) to the requestor"
+  },
+  {
+    "id": 149,
+    "section": [
+      "16.13"
+    ],
+    "recommendation": "Other Crypto Related Attacks",
+    "role": [
+      "authorization-server",
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request",
+      "authn-response",
+      "token-request",
+      "refresh-token-request",
+      "token-response",
+      "userinfo-response",
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Provide controls to mitigate the threats described in the Security Considerations of the JWT specification"
+  },
+  {
+    "id": 150,
+    "section": [
+      "16.14"
+    ],
+    "recommendation": "Signing and Encryption Order",
+    "role": [
+      "authorization-server",
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [],
+    "step": [
+      "authn-request",
+      "authn-response",
+      "token-request",
+      "refresh-token-request",
+      "token-response",
+      "userinfo-response",
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Sign then encrypt, if signing and encrypting JWTs"
+  },
+  {
+    "id": 151,
+    "section": [
+      "16.15"
+    ],
+    "recommendation": "Issuer Identifier",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the iss claim against the issuer from the authorization-server Discovery metadata"
+  },
+  {
+    "id": 152,
+    "section": [
+      "16.15"
+    ],
+    "recommendation": "Issuer Identifier",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "id-token-validation"
+    ],
+    "priority": "Must",
+    "requirement": "Compare the full URI (host plus path) when matching iss"
+  },
+  {
+    "id": 153,
+    "section": [
+      "16.17"
+    ],
+    "recommendation": "To protect against information disclosure and tampering, confidentiality protection MUST be applied using TLS with a ciphersuite that provides confidentiality and integrity protection.",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request",
+      "token-request",
+      "refresh-token-request",
+      "userinfo-request"
+    ],
+    "priority": "Must",
+    "requirement": "Use a TLS ciphersuite that provides confidentiality and integrity protection"
+  },
+  {
+    "id": 154,
+    "section": [
+      "16.17"
+    ],
+    "recommendation": "Whenever TLS is used, a TLS server certificate check MUST be performed, per RFC 6125",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request",
+      "token-request",
+      "refresh-token-request",
+      "userinfo-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the server TLS certificate per RFC 6125"
+  },
+  {
+    "id": 155,
+    "section": [
+      "16.18"
+    ],
+    "recommendation": "Access Token lifetimes SHOULD therefore be kept to single use or very short lifetimes.",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "token-response"
+    ],
+    "priority": "Should",
+    "requirement": "Make Access Tokens single use, o rhave a very short life-time"
+  },
+  {
+    "id": 156,
+    "section": [
+      "16.18"
+    ],
+    "recommendation": "The authorization-server SHOULD clearly identify long-term grants to the User during Authorization.",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "consent"
+    ],
+    "priority": "Should",
+    "requirement": "Clearly identify long-term grants to the User during Authorization"
+  },
+  {
+    "id": 157,
+    "section": [
+      "16.18"
+    ],
+    "recommendation": "The authorization-server SHOULD provide a mechanism for the End-User to revoke Access Tokens and Refresh Tokens granted to a Client.",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "revoke-consent"
+    ],
+    "priority": "Should",
+    "requirement": "Provide a mechanism for the End-User to revoke Access Tokens and Refresh Tokens granted to a Client."
+  },
+  {
+    "id": 158,
+    "section": [
+      "16.19"
+    ],
+    "recommendation": "client_secret values MUST contain sufficient entropy to generate cryptographically strong keys",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "registration"
+    ],
+    "priority": "Must",
+    "requirement": "Ensure the client_secret has sufficient entropy (when the authorization-server lets the Client choose it's value) to generate strong cryptographic keys and at a minimum the same number of octets as the cryptographic algorithms that depend on it e.g. HS256."
+  },
+  {
+    "id": 159,
+    "section": [
+      "16.20"
+    ],
+    "recommendation": "Need for Signed Requests",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Could",
+    "requirement": "Sign requests when specifying max_age and acr_values for greater assurance against tampering"
+  },
+  {
+    "id": 160,
+    "section": [
+      "16.21"
+    ],
+    "recommendation": "Need for Encrypted Requests",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Could",
+    "requirement": "Encrypt requests if the knowledge of the requested claims could expose sensitive information about the user"
+  },
+  {
+    "id": 161,
+    "section": [
+      "17.1"
+    ],
+    "recommendation": "Only necessary UserInfo data should be stored at the Client and the Client SHOULD associate the received data with the purpose of use statement. ",
+    "role": [
+      "client"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "userinfo-response"
+    ],
+    "priority": "Should",
+    "requirement": "Associate User data received with the purpose of requesting that User data "
+  },
+  {
+    "id": 162,
+    "section": [
+      "17.2"
+    ],
+    "recommendation": "The Resource Server SHOULD make End-Users' UserInfo access logs available to them so that they can monitor who accessed their data.",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "userinfo-access"
+    ],
+    "priority": "Should",
+    "requirement": "Allow Users to see logs of what Clients have accessed their data"
+  },
+  {
+    "id": 163,
+    "section": [
+      "17.3"
+    ],
+    "recommendation": "To protect the End-User from a possible correlation among Clients, the use of a Pairwise Pseudonymous Identifier (PPID) as the sub (subject) SHOULD be considered.",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "code ",
+    "user-agent-client": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "registration"
+    ],
+    "priority": "Should",
+    "requirement": "Protect the User from correlation amongst Clients by providing a Pairwise Pseudonymous Identifier (PPID) as the sub (subject)"
+  },
+  {
+    "id": 164,
+    "section": [
+      "17.4"
+    ],
+    "recommendation": "Ignoring the offline access request when the Access Token is transmitted through the User Agent",
+    "role": [
+      "authorization-server"
+    ],
+    "web-client": "",
+    "user-agent-client": [
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-response"
+    ],
+    "priority": "Must",
+    "requirement": "Ignore the offline access request if the Access Token will sent via the User-Agent to the Client"
+  }
+]
