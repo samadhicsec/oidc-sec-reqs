@@ -1091,8 +1091,8 @@
     "step": [
       "id-token-validation"
     ],
-    "priority": "Must",
-    "requirement": "Reject encrypted ID Tokens (if not configured)"
+    "priority": "Should",
+    "requirement": "Reject unencrypted ID Tokens, if the use of encrypted ID Tokens was configured at Registration"
   },
   {
     "id": 49,
@@ -1116,7 +1116,7 @@
       "id-token-validation"
     ],
     "priority": "Must",
-    "requirement": "Validate the iss claim against the issuer from the OIDC Configuration"
+    "requirement": "Validate the iss claim against the issuer from the OIDC Discovery"
   },
   {
     "id": 50,
@@ -1212,7 +1212,7 @@
       "id-token-validation"
     ],
     "priority": "Must",
-    "requirement": "Validate the ID Token signature using the JWKS key from JWKS URL specified in the OIDC Configuration"
+    "requirement": "Validate the ID Token signature using the JWKS key from JWKS URL specified in the OIDC Discovery"
   },
   {
     "id": 54,
@@ -1236,7 +1236,7 @@
       "id-token-validation"
     ],
     "priority": "Should",
-    "requirement": "Validate the the JWT header alg value is one declared supported in the OIDC Configuration."
+    "requirement": "Validate the the JWT header alg value is one declared supported in the OIDC Discovery."
   },
   {
     "id": 55,
@@ -1308,7 +1308,7 @@
       "id-token-validation"
     ],
     "priority": "Must",
-    "requirement": "Validate the iat time claim. The iat time claim must not differ from the current by more than a per-OP configurable amount. Default to 5 mins."
+    "requirement": "Validate the iat time claim. The iat time claim must not differ from the current by more than a per-OP configurable amount."
   },
   {
     "id": 58,
@@ -2646,7 +2646,7 @@
       "id-token-validation"
     ],
     "priority": "Must",
-    "requirement": "Compare strings without applying Unicode normalisation to any Unicode code point I neither the JSON string or the string it is being compared to."
+    "requirement": "Compare strings without applying Unicode normalisation to any Unicode code point in either the JSON string or the string it is being compared to."
   },
   {
     "id": 125,
