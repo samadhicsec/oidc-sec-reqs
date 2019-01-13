@@ -6,10 +6,10 @@
     ],
     "recommendation": "Sub claim is a locally unique and never reassigned identifier within the Issuer for the End-User",
     "role": [
-      "Issuer"
+      "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -27,10 +27,10 @@
     ],
     "recommendation": "Sub claim MUST NOT exceed 255 ASCII characters in length",
     "role": [
-      "Issuer"
+      "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -50,8 +50,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -71,8 +71,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -93,8 +93,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -114,8 +114,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -135,8 +135,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code ",
-    "user-agent-client": [
+    "authz-code-flow": "code ",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -157,8 +157,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -178,8 +178,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -199,8 +199,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -220,8 +220,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -241,8 +241,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -263,8 +263,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "web user-agent",
-    "user-agent-client": [
+    "authz-code-flow": "web user-agent",
+    "hybrid-flow": [
       "code code id_token",
       "code token",
       "code id_token token"
@@ -285,8 +285,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -307,8 +307,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -329,8 +329,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -351,8 +351,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -374,8 +374,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -393,12 +393,12 @@
       "3.3.2.1",
       "15.1"
     ],
-    "recommendation": "If the prompt includes 'login the authorization-server SHOULD prompt the End-User for reauthentication",
+    "recommendation": "If the prompt includes 'login' the authorization-server SHOULD prompt the End-User for reauthentication",
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -407,7 +407,7 @@
       "authn-request"
     ],
     "priority": "Should",
-    "requirement": "Prompt the End-User for reauthentication if prompt includes 'login"
+    "requirement": "Prompt the End-User for reauthentication if prompt includes 'login'"
   },
   {
     "id": 19,
@@ -416,13 +416,13 @@
       "3.3.2.1",
       "15.1"
     ],
-    "recommendation": "If the prompt includes 'login but the End-User could not be authenticated then an error MUST be returned.",
+    "recommendation": "If the prompt includes 'login' but the End-User could not be authenticated then an error MUST be returned.",
     "role": [
       "authorization-server",
       ""
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -431,7 +431,7 @@
       "authn-request"
     ],
     "priority": "Must",
-    "requirement": "Return an error if prompt includes 'login but the End-User could not be re-authenticated"
+    "requirement": "Return an error if prompt includes 'login' but the End-User could not be re-authenticated"
   },
   {
     "id": 20,
@@ -440,12 +440,12 @@
       "3.3.2.1",
       "15.1"
     ],
-    "recommendation": "If the prompt includes consent' the authorization-server SHOULD prompt the End-User for consent",
+    "recommendation": "If the prompt includes 'consent' the authorization-server SHOULD prompt the End-User for consent",
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -454,7 +454,7 @@
       "authn-request"
     ],
     "priority": "Should",
-    "requirement": "Prompt the End-User for consent if prompt includes consent' "
+    "requirement": "Prompt the End-User for consent if prompt includes 'consent' "
   },
   {
     "id": 21,
@@ -465,11 +465,10 @@
     ],
     "recommendation": "If the prompt includes consent' but no consent is obtained then an error MUST be returned.",
     "role": [
-      "authorization-server",
-      ""
+      "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -491,8 +490,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -515,8 +514,8 @@
       "authorization-server",
       ""
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -538,8 +537,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -562,8 +561,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -584,8 +583,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -606,8 +605,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -628,8 +627,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -650,8 +649,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -672,8 +671,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -694,8 +693,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -717,8 +716,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -740,8 +739,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -753,6 +752,29 @@
     "requirement": "Not interact with the End-User if prompt=none"
   },
   {
+    "id": 33.1,
+    "section": [
+      "3.1.2.3",
+      "3.3.2.3",
+      "15.1"
+    ],
+    "recommendation": "the Authorization Server MUST return an error if an End-User is not already Authenticated or could not be silently Authenticated, if the Authentication Request contains prompt=none",
+    "role": [
+      "authorization-server"
+    ],
+    "authz-code-flow": "code",
+    "hybrid-flow": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Ensure the End-User is authenticated or can be authenticated without user interaction when prompt='none'"
+  },
+  {
     "id": 34,
     "section": [
       "3.1.2.3",
@@ -762,8 +784,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -784,8 +806,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -806,8 +828,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -828,8 +850,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -850,8 +872,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -872,8 +894,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -894,8 +916,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -916,8 +938,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -940,8 +962,8 @@
       "authorization-server",
       ""
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -962,8 +984,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -985,8 +1007,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1009,8 +1031,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1033,8 +1055,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1057,8 +1079,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1082,8 +1104,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1106,8 +1128,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1130,8 +1152,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1154,8 +1176,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1178,8 +1200,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1202,8 +1224,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1226,8 +1248,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1250,8 +1272,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1274,8 +1296,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1298,8 +1320,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1322,8 +1344,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1346,8 +1368,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1370,8 +1392,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1394,8 +1416,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1416,8 +1438,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1438,8 +1460,8 @@
     "role": [
       "client"
     ],
-    "web-client": "",
-    "user-agent-client": [
+    "authz-code-flow": "",
+    "hybrid-flow": [
       "code id_token",
       "code id_token token"
     ],
@@ -1459,8 +1481,8 @@
     "role": [
       "client"
     ],
-    "web-client": "",
-    "user-agent-client": [
+    "authz-code-flow": "",
+    "hybrid-flow": [
       "code id_token",
       "code id_token token"
     ],
@@ -1480,8 +1502,8 @@
     "role": [
       "client"
     ],
-    "web-client": "",
-    "user-agent-client": [
+    "authz-code-flow": "",
+    "hybrid-flow": [
       "code id_token",
       "code id_token token"
     ],
@@ -1500,8 +1522,8 @@
     "role": [
       "client"
     ],
-    "web-client": "",
-    "user-agent-client": [
+    "authz-code-flow": "",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1522,8 +1544,8 @@
     "role": [
       "client"
     ],
-    "web-client": "",
-    "user-agent-client": [
+    "authz-code-flow": "",
+    "hybrid-flow": [
       "code id_token token"
     ],
     "step": [
@@ -1542,8 +1564,8 @@
     "role": [
       "client"
     ],
-    "web-client": "",
-    "user-agent-client": [
+    "authz-code-flow": "",
+    "hybrid-flow": [
       "code id_tokencode id_token token"
     ],
     "step": [
@@ -1561,8 +1583,8 @@
     "role": [
       "client"
     ],
-    "web-client": "",
-    "user-agent-client": [
+    "authz-code-flow": "",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1582,8 +1604,8 @@
     "role": [
       "client"
     ],
-    "web-client": "",
-    "user-agent-client": [
+    "authz-code-flow": "",
+    "hybrid-flow": [
       "code id_token token"
     ],
     "step": [
@@ -1601,8 +1623,8 @@
     "role": [
       "client"
     ],
-    "web-client": "",
-    "user-agent-client": [
+    "authz-code-flow": "",
+    "hybrid-flow": [
       "code id_token",
       "code id_token token"
     ],
@@ -1621,8 +1643,8 @@
     "role": [
       "client"
     ],
-    "web-client": "",
-    "user-agent-client": [
+    "authz-code-flow": "",
+    "hybrid-flow": [
       "code id_token",
       "code id_token token"
     ],
@@ -1641,8 +1663,8 @@
     "role": [
       "client"
     ],
-    "web-client": "",
-    "user-agent-client": [
+    "authz-code-flow": "",
+    "hybrid-flow": [
       "code id_token",
       "code id_token token"
     ],
@@ -1661,8 +1683,12 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [],
+    "authz-code-flow": "code",
+    "hybrid-flow": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
     "step": [
       "login-init"
     ],
@@ -1679,8 +1705,8 @@
       "client",
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1700,8 +1726,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1721,8 +1747,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1742,8 +1768,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1763,8 +1789,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1784,8 +1810,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1805,8 +1831,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1826,8 +1852,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1843,13 +1869,42 @@
     "section": [
       "5.3.4"
     ],
-    "recommendation": "",
-    "role": [],
-    "web-client": "",
-    "user-agent-client": [],
-    "step": [],
-    "priority": "",
-    "requirement": ""
+    "recommendation": "Verify that the OP that responded was the intended OP through a TLS server certificate check, per RFC 6125",
+    "role": [
+      "client"
+    ],
+    "authz-code-flow": "code",
+    "hybrid-flow": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "userinfo-response"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the server TLS certificate per RFC 6125"
+  },
+  {
+    "id": 83.1,
+    "section": [
+      "5.3.4"
+    ],
+    "recommendation": "If the response was signed, the Client SHOULD validate the signature according to JWS [JWS].",
+    "role": [
+      "client"
+    ],
+    "authz-code-flow": "code",
+    "hybrid-flow": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "step": [
+      "userinfo-response"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the signature according to JWS, if the response was signed"
   },
   {
     "id": 84,
@@ -1860,8 +1915,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1881,8 +1936,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1902,8 +1957,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -1925,8 +1980,12 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [],
+    "authz-code-flow": "code",
+    "hybrid-flow": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
     "step": [
       "authn-request"
     ],
@@ -1943,8 +2002,12 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [],
+    "authz-code-flow": "code",
+    "hybrid-flow": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
     "step": [
       "authn-request"
     ],
@@ -1961,8 +2024,12 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [],
+    "authz-code-flow": "code",
+    "hybrid-flow": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
     "step": [
       "authn-request"
     ],
@@ -1978,8 +2045,12 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [],
+    "authz-code-flow": "code",
+    "hybrid-flow": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
     "step": [
       "authn-request"
     ],
@@ -1995,8 +2066,12 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [],
+    "authz-code-flow": "code",
+    "hybrid-flow": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
     "step": [
       "authn-request"
     ],
@@ -2012,8 +2087,12 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [],
+    "authz-code-flow": "code",
+    "hybrid-flow": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
     "step": [
       "authn-request"
     ],
@@ -2029,8 +2108,12 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [],
+    "authz-code-flow": "code",
+    "hybrid-flow": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
     "step": [
       "authn-request"
     ],
@@ -2046,8 +2129,12 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [],
+    "authz-code-flow": "code",
+    "hybrid-flow": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
     "step": [
       "authn-request"
     ],
@@ -2063,8 +2150,12 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [],
+    "authz-code-flow": "code",
+    "hybrid-flow": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
     "step": [
       "authn-request"
     ],
@@ -2080,8 +2171,12 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [],
+    "authz-code-flow": "code",
+    "hybrid-flow": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
     "step": [
       "authn-request"
     ],
@@ -2097,8 +2192,12 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [],
+    "authz-code-flow": "code",
+    "hybrid-flow": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
     "step": [
       "authn-request"
     ],
@@ -2114,8 +2213,12 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [],
+    "authz-code-flow": "code",
+    "hybrid-flow": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
     "step": [
       "authn-request"
     ],
@@ -2131,8 +2234,12 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [],
+    "authz-code-flow": "code",
+    "hybrid-flow": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
     "step": [
       "authn-request"
     ],
@@ -2148,8 +2255,12 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [],
+    "authz-code-flow": "code",
+    "hybrid-flow": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
     "step": [
       "authn-request"
     ],
@@ -2165,8 +2276,12 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [],
+    "authz-code-flow": "code",
+    "hybrid-flow": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
     "step": [
       "authn-request"
     ],
@@ -2182,14 +2297,14 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
     ],
     "step": [
-      "Id-token-validation"
+      "id-token-generation"
     ],
     "priority": "Must",
     "requirement": "Return 2 different sub claims for 2 different clients when the same user authenticates when pairwise Subject Identifier is used"
@@ -2203,8 +2318,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -2224,8 +2339,12 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [],
+    "authz-code-flow": "code",
+    "hybrid-flow": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
     "step": [
       "token-request"
     ],
@@ -2241,8 +2360,12 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [],
+    "authz-code-flow": "code",
+    "hybrid-flow": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
     "step": [
       "token-request"
     ],
@@ -2258,8 +2381,12 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [],
+    "authz-code-flow": "code",
+    "hybrid-flow": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
     "step": [
       "token-request"
     ],
@@ -2275,8 +2402,12 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [],
+    "authz-code-flow": "code",
+    "hybrid-flow": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
     "step": [
       "token-request"
     ],
@@ -2292,8 +2423,12 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [],
+    "authz-code-flow": "code",
+    "hybrid-flow": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
     "step": [
       "token-request"
     ],
@@ -2309,8 +2444,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -2319,7 +2454,7 @@
       "token-request"
     ],
     "priority": "Must",
-    "requirement": "Validate the client has authenticated using an allowed authentication, must does not include the 'none' mthod"
+    "requirement": "Validate the client has authenticated using an allowed authentication, must does not include the 'none' method"
   },
   {
     "id": 110,
@@ -2331,8 +2466,12 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [],
+    "authz-code-flow": "code",
+    "hybrid-flow": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
     "step": [
       "authn-request"
     ],
@@ -2348,8 +2487,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -2369,8 +2508,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -2390,8 +2529,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -2411,8 +2550,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -2432,8 +2571,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -2453,8 +2592,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -2474,8 +2613,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -2495,8 +2634,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -2516,8 +2655,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -2537,8 +2676,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -2558,8 +2697,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -2579,15 +2718,14 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
     ],
     "step": [
-      "token-request",
-      "refresh-token-request"
+      "token-request"
     ],
     "priority": "Must",
     "requirement": "Validate POST parameters are encoded with application/x-www-form-urlencoded"
@@ -2602,8 +2740,8 @@
       "authorization-server",
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -2630,8 +2768,8 @@
       "authorization-server",
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -2658,8 +2796,8 @@
       "authorization-server",
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -2686,8 +2824,8 @@
       "authorization-server",
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -2713,15 +2851,14 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
     ],
     "step": [
-      "authn-response",
-      "token-response"
+      "id-token-creation"
     ],
     "priority": "Must",
     "requirement": "Support signing ID Tokens with RSA SHA-256"
@@ -2735,8 +2872,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -2756,8 +2893,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -2777,8 +2914,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -2798,8 +2935,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -2819,8 +2956,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -2840,8 +2977,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -2861,8 +2998,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -2883,8 +3020,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -2906,8 +3043,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -2928,8 +3065,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -2950,8 +3087,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code token"
     ],
     "step": [
@@ -2969,8 +3106,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "",
-    "user-agent-client": [
+    "authz-code-flow": "",
+    "hybrid-flow": [
       "code id_token",
       "code id_token token"
     ],
@@ -2989,8 +3126,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -3011,10 +3148,14 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [],
+    "authz-code-flow": "code",
+    "hybrid-flow": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
     "step": [
-      "authn-request"
+      "token-request"
     ],
     "priority": "Could",
     "requirement": "Enforce non-repudiation by require a signed request using a public key of the client's."
@@ -3028,8 +3169,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -3038,7 +3179,7 @@
       "token-response"
     ],
     "priority": "Should",
-    "requirement": "Generate Access Tokens that include scope and have an audience claim with a value of the Resource identifier. Validate the aud claim of the Access Token contains the Client's ID"
+    "requirement": "Generate Access Tokens that include scope and have an audience claim with a value of the Resource identifier."
   },
   {
     "id": 143,
@@ -3049,8 +3190,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -3070,8 +3211,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -3092,8 +3233,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -3113,8 +3254,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -3134,8 +3275,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -3156,8 +3297,8 @@
       "authorization-server",
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -3184,8 +3325,8 @@
       "authorization-server",
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -3212,8 +3353,12 @@
       "authorization-server",
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [],
+    "authz-code-flow": "code",
+    "hybrid-flow": [
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
     "step": [
       "authn-request",
       "authn-response",
@@ -3235,8 +3380,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -3256,8 +3401,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -3277,8 +3422,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -3301,8 +3446,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -3325,8 +3470,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -3335,7 +3480,7 @@
       "token-response"
     ],
     "priority": "Should",
-    "requirement": "Make Access Tokens single use, o rhave a very short life-time"
+    "requirement": "Make Access Tokens single use, or have a very short life-time"
   },
   {
     "id": 156,
@@ -3346,14 +3491,14 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
     ],
     "step": [
-      "consent"
+      "authn-request"
     ],
     "priority": "Should",
     "requirement": "Clearly identify long-term grants to the User during Authorization"
@@ -3367,14 +3512,14 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
     ],
     "step": [
-      "revoke-consent"
+      "consent-management"
     ],
     "priority": "Should",
     "requirement": "Provide a mechanism for the End-User to revoke Access Tokens and Refresh Tokens granted to a Client."
@@ -3388,8 +3533,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -3409,8 +3554,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -3430,8 +3575,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -3451,8 +3596,8 @@
     "role": [
       "client"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -3472,8 +3617,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code",
-    "user-agent-client": [
+    "authz-code-flow": "code",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -3493,8 +3638,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "code ",
-    "user-agent-client": [
+    "authz-code-flow": "code ",
+    "hybrid-flow": [
       "code id_token",
       "code token",
       "code id_token token"
@@ -3514,8 +3659,8 @@
     "role": [
       "authorization-server"
     ],
-    "web-client": "",
-    "user-agent-client": [
+    "authz-code-flow": "",
+    "hybrid-flow": [
       "code token",
       "code id_token token"
     ],
