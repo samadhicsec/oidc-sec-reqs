@@ -11,3 +11,11 @@ Security requirements have been captured for the following response_types:
   * code id_token token
 
 The Implicit flow is not considered.
+
+The contents of the files are as follows:
+
+| File | Description |
+| ---- | ----|
+| oidc-core-sec-reqs-raw.json    | Security requirements extracted directly from the OIDC standard.  Categorised by section, role, flow, priority and step.  |
+| oidc-core-token-validation.json | De-duplicated ID token validation security requirements grouped by protocol stage, category, priority and response_type |
+| oidc-core-authz-server-reqs.json | De-duplicated Authorization Server (a.k.a OpenID Provider (OP), Relying Party) security requirements grouped by protocol stage, category, priority and response_type |

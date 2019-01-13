@@ -1,0 +1,1323 @@
+[
+  {
+    "id": 0,
+    "protocol_stage": "end-user-management",
+    "category": "user-registration",
+    "priority": "Must",
+    "requirement": "Ensure the sub claim for an End-User is unique and never reassigned",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-2"
+    ]
+  },
+  {
+    "id": 1,
+    "protocol_stage": "end-user-management",
+    "category": "user-registration",
+    "priority": "Must",
+    "requirement": "Ensure the sub claim is not greater than 255 ASCII characters",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-2"
+    ]
+  },
+  {
+    "id": 2,
+    "protocol_stage": "end-user-management",
+    "category": "user-registration",
+    "priority": "Should",
+    "requirement": "Protect the User from correlation amongst Clients by providing a Pairwise Pseudonymous Identifier (PPID) as the sub (subject)",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-17.3"
+    ]
+  },
+  {
+    "id": 3,
+    "protocol_stage": "end-user-management",
+    "category": "revoke-consent",
+    "priority": "Should",
+    "requirement": "Provide a mechanism for the End-User to revoke Access Tokens and Refresh Tokens granted to a Client",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-16.18"
+    ]
+  },
+  {
+    "id": 4,
+    "protocol_stage": "end-user-management",
+    "category": "logs",
+    "priority": "Should",
+    "requirement": "Allow Users to see logs of what Clients have accessed their data",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-17.2"
+    ]
+  },
+  {
+    "id": 5,
+    "protocol_stage": "client-registration",
+    "category": "client_secret",
+    "priority": "Must",
+    "requirement": "Ensure the client_secret has sufficient entropy (when the authorization-server lets the Client choose it's value) to generate strong cryptographic keys and at a minimum the same number of octets as the cryptographic algorithms that depend on it e.g. HS256.",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-16.19"
+    ]
+  },
+  {
+    "id": 6,
+    "protocol_stage": "client-registration",
+    "category": "redirect_uris",
+    "priority": "Must",
+    "requirement": "Validate client registers a sector_identifier_uri during Dynamic Client Registration if the client registers multiple redirect_uris with different hostnames",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-8.1"
+    ]
+  },
+  {
+    "id": 7,
+    "protocol_stage": "id-token-creation",
+    "category": "aud",
+    "priority": "Must",
+    "requirement": "Ensure the aud claim contains the client_id of the Relying Party",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-2"
+    ]
+  },
+  {
+    "id": 8,
+    "protocol_stage": "id-token-creation",
+    "category": "nonce",
+    "priority": "Must",
+    "requirement": "Ensure the nonce claim in the ID Token is the same as the nonce received in the Authentication Request",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-2"
+    ]
+  },
+  {
+    "id": 9,
+    "protocol_stage": "id-token-creation",
+    "category": "sub claim",
+    "priority": "Must",
+    "requirement": "Return 2 different sub claims for 2 different clients when the same user authenticates when pairwise Subject Identifier is used",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-8"
+    ]
+  },
+  {
+    "id": 10,
+    "protocol_stage": "id-token-creation",
+    "category": "signature",
+    "priority": "Must",
+    "requirement": "Support signing ID Tokens with RSA SHA-256",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-15.1"
+    ]
+  },
+  {
+    "id": 11,
+    "protocol_stage": "discovery",
+    "category": "keys",
+    "priority": "Must",
+    "requirement": "Publish public keys as bare JWK keys (which MAY also be accompanied by X.509 representations of those keys), when being Dynamic OP",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-15.2"
+    ]
+  },
+  {
+    "id": 12,
+    "protocol_stage": "authn-request",
+    "category": "encoding",
+    "priority": "Must",
+    "requirement": "Validate GET query parameters are encoded with application/x-www-form-urlencoded",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-13.1"
+    ]
+  },
+  {
+    "id": 13,
+    "protocol_stage": "authn-request",
+    "category": "client_id",
+    "priority": "Must",
+    "requirement": "Validate that the client_id parameter is present and valid",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.2.1",
+      "OIDC-3.3.2.1"
+    ]
+  },
+  {
+    "id": 14,
+    "protocol_stage": "authn-request",
+    "category": "redirect_uri",
+    "priority": "Must",
+    "requirement": "Validate the redirect_uri parameter is present",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.2.2",
+      "OIDC-3.3.2.2"
+    ]
+  },
+  {
+    "id": 15,
+    "protocol_stage": "authn-request",
+    "category": "redirect_uri",
+    "priority": "Must",
+    "requirement": "Match the client redirection URL to one specified at client registration",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.2.1",
+      "OIDC-3.3.2.1"
+    ]
+  },
+  {
+    "id": 16,
+    "protocol_stage": "authn-request",
+    "category": "prompt",
+    "priority": "Must",
+    "requirement": "Support the prompt parameter",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-15.1"
+    ]
+  },
+  {
+    "id": 17,
+    "protocol_stage": "authn-request",
+    "category": "prompt",
+    "priority": "Must",
+    "requirement": "Ensure no authentication or consent user interface pages are displayed if prompt='none'",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.2.1",
+      "OIDC-3.3.2.1",
+      "OIDC-3.1.2.3",
+      "OIDC-3.3.2.3",
+      "OIDC-15.1"
+    ]
+  },
+  {
+    "id": 18,
+    "protocol_stage": "authn-request",
+    "category": "prompt",
+    "priority": "Must",
+    "requirement": "Ensure the End-User is authenticated or can be authenticated without user interaction when prompt='none'",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.2.3",
+      "OIDC-3.3.2.3",
+      "OIDC-15.1"
+    ]
+  },
+  {
+    "id": 19,
+    "protocol_stage": "authn-request",
+    "category": "prompt",
+    "priority": "Must",
+    "requirement": "Prompt the End-User for authentication or reauthentication (if the user is already authenticated) if prompt includes 'login'",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.2.1",
+      "OIDC-3.3.2.1",
+      "OIDC-3.1.2.3",
+      "OIDC-3.3.2.3",
+      "OIDC-15.1"
+    ]
+  },
+  {
+    "id": 20,
+    "protocol_stage": "authn-request",
+    "category": "prompt",
+    "priority": "Must",
+    "requirement": "Return an error if prompt includes 'login' but the End-User could not be re-authenticated",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.2.1",
+      "OIDC-3.3.2.1",
+      "OIDC-15.1"
+    ]
+  },
+  {
+    "id": 21,
+    "protocol_stage": "authn-request",
+    "category": "prompt",
+    "priority": "Should",
+    "requirement": "Prompt the End-User for consent if prompt includes 'consent'",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.2.1",
+      "OIDC-3.3.2.1",
+      "OIDC-15.1"
+    ]
+  },
+  {
+    "id": 22,
+    "protocol_stage": "authn-request",
+    "category": "prompt",
+    "priority": "Must",
+    "requirement": "Return an error if prompt includes 'consent' and consent is requested, but no consent is obtained",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.2.1",
+      "OIDC-3.3.2.1",
+      "OIDC-15.1"
+    ]
+  },
+  {
+    "id": 23,
+    "protocol_stage": "authn-request",
+    "category": "prompt",
+    "priority": "Should",
+    "requirement": "Prompt the End-User to select a user account if prompt includes 'select_account'",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.2.1",
+      "OIDC-3.3.2.1",
+      "OIDC-15.1"
+    ]
+  },
+  {
+    "id": 24,
+    "protocol_stage": "authn-request",
+    "category": "prompt",
+    "priority": "Must",
+    "requirement": "Return an error if prompt includes 'select_account' and the End-User is asked to select an account, but no account is selected",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.2.1",
+      "OIDC-3.3.2.1",
+      "OIDC-15.1"
+    ]
+  },
+  {
+    "id": 25,
+    "protocol_stage": "authn-request",
+    "category": "prompt",
+    "priority": "Must",
+    "requirement": "Return an error is prompt includes 'none' and any other value",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.2.1",
+      "OIDC-3.3.2.1",
+      "OIDC-15.1"
+    ]
+  },
+  {
+    "id": 26,
+    "protocol_stage": "authn-request",
+    "category": "prompt",
+    "priority": "Must",
+    "requirement": "Ignore the offline access request if the Access Token will sent via the User-Agent to the Client",
+    "response_type": [
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-17.4"
+    ]
+  },
+  {
+    "id": 27,
+    "protocol_stage": "authn-request",
+    "category": "max-age",
+    "priority": "Must",
+    "requirement": "Re-authenticate the End-User if max-age is specified and is less than the elapsed time since the last active authentication",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.2.1",
+      "OIDC-3.3.2.1",
+      "OIDC-15.1"
+    ]
+  },
+  {
+    "id": 28,
+    "protocol_stage": "authn-request",
+    "category": "id_token_hint",
+    "priority": "Should",
+    "requirement": "Return an error, when id_token_hint is specified, and if the End-User identified by the ID Token is not logged in nor is logged in by the request",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.2.1",
+      "OIDC-3.3.2.1"
+    ]
+  },
+  {
+    "id": 29,
+    "protocol_stage": "authn-request",
+    "category": "acr_values",
+    "priority": "Must",
+    "requirement": "Support requests for specific Authentication Context Class Reference values via the acr_values parameter (or at least not fail if it is used)",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-15.1"
+    ]
+  },
+  {
+    "id": 30,
+    "protocol_stage": "authn-request",
+    "category": "OAuth 2.0 parameters",
+    "priority": "Must",
+    "requirement": "Validate all the OAuth 2.0 parameters according to the OAuth 2.0 specification",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.2.2",
+      "OIDC-3.3.2.2"
+    ]
+  },
+  {
+    "id": 31,
+    "protocol_stage": "authn-request",
+    "category": "scope",
+    "priority": "Must",
+    "requirement": "Validate the scope parameter is present",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.2.2",
+      "OIDC-3.3.2.2"
+    ]
+  },
+  {
+    "id": 32,
+    "protocol_stage": "authn-request",
+    "category": "response_type",
+    "priority": "Must",
+    "requirement": "Validate the response_type parameter is present",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.2.2",
+      "OIDC-3.3.2.2"
+    ]
+  },
+  {
+    "id": 33,
+    "protocol_stage": "authn-request",
+    "category": "authentication",
+    "priority": "Must",
+    "requirement": "Ensure the End-User identified matches the requested sub value if requested via either the id_token_hint or claims parameters, otherwise return an error",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.2.2",
+      "OIDC-3.3.2.2"
+    ]
+  },
+  {
+    "id": 34,
+    "protocol_stage": "authn-request",
+    "category": "authentication",
+    "priority": "Must",
+    "requirement": "Authenticate the End-User if they are not already authenticated",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.2.3",
+      "OIDC-3.3.2.3"
+    ]
+  },
+  {
+    "id": 35,
+    "protocol_stage": "authn-request",
+    "category": "authentication",
+    "priority": "Must",
+    "requirement": "Prevent Cross-Site Request Forgery and Clickjacking",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.2.3",
+      "OIDC-3.3.2.3"
+    ]
+  },
+  {
+    "id": 36,
+    "protocol_stage": "authn-request",
+    "category": "consent",
+    "priority": "Must",
+    "requirement": "Obtain an authorization decision form the End-User before giving a positive response",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.2.4",
+      "OIDC-3.3.2.4"
+    ]
+  },
+  {
+    "id": 37,
+    "protocol_stage": "authn-request",
+    "category": "consent",
+    "priority": "Must",
+    "requirement": "Get user consent if the client include offline_access in the scope parameter",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-11",
+      "OIDC-17.4"
+    ]
+  },
+  {
+    "id": 38,
+    "protocol_stage": "authn-request",
+    "category": "consent",
+    "priority": "Should",
+    "requirement": "Clearly identify long-term grants to the End-User during consent",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-16.18"
+    ]
+  },
+  {
+    "id": 39,
+    "protocol_stage": "authn-request",
+    "category": "request parameter",
+    "priority": "Must",
+    "requirement": "Validate the response_type and client_id URL parameters match the corresponding values in the (referenced) Request Object",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-6.1",
+      "OIDC-6.2"
+    ]
+  },
+  {
+    "id": 40,
+    "protocol_stage": "authn-request",
+    "category": "request parameter",
+    "priority": "Must",
+    "requirement": "Validate a scope URL parameter is present, regardless of whether the same field exists in a (referenced) Request Object",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-6.1",
+      "OIDC-6.2"
+    ]
+  },
+  {
+    "id": 41,
+    "protocol_stage": "authn-request",
+    "category": "request object validation",
+    "priority": "Should",
+    "requirement": "Validate a signed Request Object contains the iss and aud claims",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-6.1"
+    ]
+  },
+  {
+    "id": 42,
+    "protocol_stage": "authn-request",
+    "category": "request object validation",
+    "priority": "Should",
+    "requirement": "Validate a signed Request object aud value includes the OP's Issuer Identifier URL",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-6.1"
+    ]
+  },
+  {
+    "id": 43,
+    "protocol_stage": "authn-request",
+    "category": "request object validation",
+    "priority": "Must",
+    "requirement": "Validate a signed and encrypted Request Object was signed then encrypted",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-6.1"
+    ]
+  },
+  {
+    "id": 44,
+    "protocol_stage": "authn-request",
+    "category": "request_uri parameter",
+    "priority": "Must",
+    "requirement": "Support requests made using a Request Object value that is retrieved from a Request URI that is provided with the request_uri parameter, when being Dynamic OP",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-15.2"
+    ]
+  },
+  {
+    "id": 45,
+    "protocol_stage": "authn-request",
+    "category": "request_uri parameter",
+    "priority": "Must",
+    "requirement": "Validate the Request URI does not exceed 512 ASCII characters",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-6.2"
+    ]
+  },
+  {
+    "id": 46,
+    "protocol_stage": "authn-request",
+    "category": "request_uri parameter",
+    "priority": "Must",
+    "requirement": "Validate the resource referenced by the Request URI is a Request Object",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-6.2"
+    ]
+  },
+  {
+    "id": 47,
+    "protocol_stage": "authn-request",
+    "category": "request_uri parameter",
+    "priority": "Must",
+    "requirement": "Validate the Request URI uses HTTPS, or that the referenced Request Object is signed",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-6.2"
+    ]
+  },
+  {
+    "id": 48,
+    "protocol_stage": "authn-request",
+    "category": "request object validation",
+    "priority": "Must",
+    "requirement": "Validate the encrypted Request Object uses values from request_object_encryption_alg_values_supported and request_object_encryption_enc_values_supported",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-6.3.1"
+    ]
+  },
+  {
+    "id": 49,
+    "protocol_stage": "authn-request",
+    "category": "request object validation",
+    "priority": "Must",
+    "requirement": "Decrypt the Request Object in accordance with the JWE specification",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-6.3.1"
+    ]
+  },
+  {
+    "id": 50,
+    "protocol_stage": "authn-request",
+    "category": "request object validation",
+    "priority": "Must",
+    "requirement": "Validate the Request Object signature alg matches the request_object_signing_alg set during Client Registration",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-6.3.2"
+    ]
+  },
+  {
+    "id": 51,
+    "protocol_stage": "authn-request",
+    "category": "request object validation",
+    "priority": "Must",
+    "requirement": "Validate the Request Object signature against the appropriate key for that client_id and algorithm",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-6.3.2"
+    ]
+  },
+  {
+    "id": 52,
+    "protocol_stage": "authn-request",
+    "category": "request parameter",
+    "priority": "Must",
+    "requirement": "Use the Request Object parameters when they differ from the URL parameters",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-6.3.3"
+    ]
+  },
+  {
+    "id": 53,
+    "protocol_stage": "authn-response",
+    "category": "TLS",
+    "priority": "Must",
+    "requirement": "Ensure that the ID token is sent over a TLS protected channel",
+    "response_type": [
+      "code id_token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-16.3",
+      "OIDC-16.11"
+    ]
+  },
+  {
+    "id": 54,
+    "protocol_stage": "authn-response",
+    "category": "encrypt",
+    "priority": "Could",
+    "requirement": "Encrypt the ID Token with the Client's public key or shared secret",
+    "response_type": [
+      "code id_token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-16.5"
+    ]
+  },
+  {
+    "id": 55,
+    "protocol_stage": "token-request",
+    "category": "encoding",
+    "priority": "Must",
+    "requirement": "Validate POST parameters are encoded with application/x-www-form-urlencoded",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-13.2"
+    ]
+  },
+  {
+    "id": 56,
+    "protocol_stage": "token-request",
+    "category": "authentication",
+    "priority": "Must",
+    "requirement": "Authenticate the client using a supported client authentication method, and it is not the 'none' method",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.3.2",
+      "OIDC-3.3.3.2",
+      "OIDC-9",
+      "OIDC-16.10"
+    ]
+  },
+  {
+    "id": 57,
+    "protocol_stage": "token-request",
+    "category": "authentication",
+    "priority": "Could",
+    "requirement": "Enforce non-repudiation by requiring client to authenticate using private_key_jwt",
+    "response_type": [
+      "code",
+      "code token"
+    ],
+    "reference": [
+      "OIDC-16.7"
+    ]
+  },
+  {
+    "id": 58,
+    "protocol_stage": "token-request",
+    "category": "authentication",
+    "priority": "Must",
+    "requirement": "Validate the iss and sub claim are a valid client_id when the client authenticates using private_key_jwt",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-9"
+    ]
+  },
+  {
+    "id": 59,
+    "protocol_stage": "token-request",
+    "category": "authentication",
+    "priority": "Must",
+    "requirement": "Validate the aud claim identifies the authorization-server when the client authenticates using client_secret_jwt/private_key_jwt",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-9"
+    ]
+  },
+  {
+    "id": 60,
+    "protocol_stage": "token-request",
+    "category": "authentication",
+    "priority": "Must",
+    "requirement": "Validate the exp time has not passed when the client authenticates using client_secret_jwt/private_key_jwt",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-9"
+    ]
+  },
+  {
+    "id": 61,
+    "protocol_stage": "token-request",
+    "category": "authentication",
+    "priority": "Must",
+    "requirement": "Validate the parameter client_assertion_type=\\\"urn:ietf:params:oauth:client-assertion-type:jwt-bearer\\\" when the client authenticates using client_secret_jwt/private_key_jwt",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-9"
+    ]
+  },
+  {
+    "id": 62,
+    "protocol_stage": "token-request",
+    "category": "authorization code",
+    "priority": "Must",
+    "requirement": "Ensure the Authorization Code was issued to the authenticated Client",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.3.2",
+      "OIDC-3.3.3.2"
+    ]
+  },
+  {
+    "id": 63,
+    "protocol_stage": "token-request",
+    "category": "authorization code",
+    "priority": "Must",
+    "requirement": "Verify that the Authorization Code is valid",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.3.2",
+      "OIDC-3.3.3.2"
+    ]
+  },
+  {
+    "id": 64,
+    "protocol_stage": "token-request",
+    "category": "authorization code",
+    "priority": "Must",
+    "requirement": "Verify that the Authorization Code used was issued in response to an OpenID Connect Authentication Request",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.3.2",
+      "OIDC-3.3.3.2"
+    ]
+  },
+  {
+    "id": 65,
+    "protocol_stage": "token-request",
+    "category": "authorization code",
+    "priority": "Should",
+    "requirement": "Verify that the Authorization Code has not been previously used",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.3.2",
+      "OIDC-3.3.3.2",
+      "OIDC-16.9"
+    ]
+  },
+  {
+    "id": 66,
+    "protocol_stage": "token-request",
+    "category": "redirect_uri",
+    "priority": "Must",
+    "requirement": "Ensure that the redirect_uri parameter value is identical to the redirect_uri parameter value that was included in the initial Authorization Request",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.3.2",
+      "OIDC-3.3.3.2"
+    ]
+  },
+  {
+    "id": 67,
+    "protocol_stage": "token-request",
+    "category": "refresh-token-request",
+    "priority": "Must",
+    "requirement": "Validate the Refresh Token is valid",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-12.1"
+    ]
+  },
+  {
+    "id": 68,
+    "protocol_stage": "token-request",
+    "category": "refresh-token-request",
+    "priority": "Must",
+    "requirement": "Validate the Refresh Token was issued to the Client",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-12.1"
+    ]
+  },
+  {
+    "id": 69,
+    "protocol_stage": "token-request",
+    "category": "refresh-token-request",
+    "priority": "Must",
+    "requirement": "Authenticate the client",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-12.1"
+    ]
+  },
+  {
+    "id": 70,
+    "protocol_stage": "token-response",
+    "category": "TLS",
+    "priority": "Must",
+    "requirement": "Ensure that the ID token is sent over a TLS protected channel",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-16.3",
+      "OIDC-16.11"
+    ]
+  },
+  {
+    "id": 71,
+    "protocol_stage": "token-response",
+    "category": "access token",
+    "priority": "Should",
+    "requirement": "Generate Access Tokens that include scope and have an audience claim with a value of the Resource identifier. Validate the aud claim of the Access Token contains the Client's ID",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-16.8"
+    ]
+  },
+  {
+    "id": 72,
+    "protocol_stage": "token-response",
+    "category": "access token",
+    "priority": "Should",
+    "requirement": "Make Access Tokens single use, or have a very short life-time",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-16.18"
+    ]
+  },
+  {
+    "id": 73,
+    "protocol_stage": "token-response",
+    "category": "id-token",
+    "priority": "Could",
+    "requirement": "Encrypt the ID Token to the client, if the client has registered encryption keys",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-16.10"
+    ]
+  },
+  {
+    "id": 74,
+    "protocol_stage": "userinfo-request",
+    "category": "https",
+    "priority": "Must",
+    "requirement": "Ensure that the UserInfo Endpoint scheme is https",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-5.3"
+    ]
+  },
+  {
+    "id": 75,
+    "protocol_stage": "userinfo-request",
+    "category": "authorization",
+    "priority": "Must",
+    "requirement": "Accept Access Tokens as bearer tokens on the UserInfo Endpoint",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-5.3"
+    ]
+  },
+  {
+    "id": 76,
+    "protocol_stage": "userinfo-request",
+    "category": "aud claim",
+    "priority": "Must",
+    "requirement": "Validate the audience claim of the Access Token is the authorization-server identifier",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-16.8"
+    ]
+  },
+  {
+    "id": 77,
+    "protocol_stage": "userinfo-request",
+    "category": "CORS",
+    "priority": "Should",
+    "requirement": "Support CORS on the UserInfo Endpoint",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-5.3"
+    ]
+  },
+  {
+    "id": 78,
+    "protocol_stage": "userinfo-response",
+    "category": "response format",
+    "priority": "Must",
+    "requirement": "Set a content-type header to indicate which format is being returned, which must be application/json if the response body is a text JSON object",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-5.3.2"
+    ]
+  },
+  {
+    "id": 79,
+    "protocol_stage": "userinfo-response",
+    "category": "response format",
+    "priority": "Should",
+    "requirement": "Use UTF-8 for the UserInfo Endpoint response body encoding",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-5.3.2"
+    ]
+  }
+]
