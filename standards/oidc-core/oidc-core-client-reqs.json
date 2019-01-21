@@ -1,0 +1,420 @@
+[
+  {
+    "id": 0,
+    "protocol_stage": "General",
+    "category": "Identifier",
+    "priority": "Must",
+    "requirement": "Only use the combination of iss and sub, as a unique identifier for the user",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-5.7"
+    ]
+  },
+  {
+    "id": 1,
+    "protocol_stage": "login-init",
+    "category": "initiate_login_uri",
+    "priority": "Should",
+    "requirement": "Ensure client's initiate_login_uri (if used) employs frame-busting techniques",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-4"
+    ]
+  },
+  {
+    "id": 2,
+    "protocol_stage": "authn-request",
+    "category": "redirect_uri",
+    "priority": "Should",
+    "requirement": "Use https scheme for the redirect_uri parameter",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.2.1",
+      "OIDC-3.3.2.1"
+    ]
+  },
+  {
+    "id": 3,
+    "protocol_stage": "authn-request",
+    "category": "state",
+    "priority": "Should",
+    "requirement": "Use the state parameter to protect against CSRF attacks",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.2.1",
+      "OIDC-3.3.2.1"
+    ]
+  },
+  {
+    "id": 4,
+    "protocol_stage": "authn-request",
+    "category": "nonce",
+    "priority": "Must",
+    "requirement": "Generate nonce with sufficient entropy to avoid attackers guessing the value",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.2.1",
+      "OIDC-3.3.2.1"
+    ]
+  },
+  {
+    "id": 5,
+    "protocol_stage": "authn-request",
+    "category": "nonce",
+    "priority": "Must",
+    "requirement": "Link the nonce value to the user session and make it unguessable",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-15.5.2"
+    ]
+  },
+  {
+    "id": 6,
+    "protocol_stage": "authn-request",
+    "category": "request",
+    "priority": "Could",
+    "requirement": "Use request or request_uri parameters to provide confidentiality and integrity to request parameters",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-16.1"
+    ]
+  },
+  {
+    "id": 7,
+    "protocol_stage": "authn-request",
+    "category": "request",
+    "priority": "Could",
+    "requirement": "Sign requests when specifying max_age and acr_values for greater assurance against tampering",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-16.20"
+    ]
+  },
+  {
+    "id": 8,
+    "protocol_stage": "authn-request",
+    "category": "request",
+    "priority": "Could",
+    "requirement": "Encrypt requests if the knowledge of the requested claims could expose sensitive information about the user",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-16.21"
+    ]
+  },
+  {
+    "id": 9,
+    "protocol_stage": "authn-request",
+    "category": "request",
+    "priority": "Must",
+    "requirement": "Not make an authentication request with both the request and request_uri parameters",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-6"
+    ]
+  },
+  {
+    "id": 10,
+    "protocol_stage": "authn-request",
+    "category": "request_uri",
+    "priority": "Must",
+    "requirement": "Use an unguessable request_uri, if request_uri is used",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-6.2.1"
+    ]
+  },
+  {
+    "id": 11,
+    "protocol_stage": "authn-response",
+    "category": "OAuth2",
+    "priority": "Must",
+    "requirement": "Validate the response according to RFC 6749, especially Sections 4.1.2 and 10.12",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.2.7",
+      "OIDC-3.3.2.7"
+    ]
+  },
+  {
+    "id": 12,
+    "protocol_stage": "authn-response",
+    "category": "OAuth2",
+    "priority": "Must",
+    "requirement": "Verify that the response conforms to Section 5 of \\\"OAuth 2.0 Multiple Response Type Encoding Practices\\\"",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.3.2.8"
+    ]
+  },
+  {
+    "id": 13,
+    "protocol_stage": "authn-response",
+    "category": "at_hash",
+    "priority": "Must",
+    "requirement": "Validate the at_hash in the ID Token matches the calculated value from the Access Token",
+    "response_type": [
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.3.2.9",
+      "OIDC-16.11"
+    ]
+  },
+  {
+    "id": 14,
+    "protocol_stage": "authn-response",
+    "category": "c_hash",
+    "priority": "Must",
+    "requirement": "Validate the c_hash in the ID Token matches the calculated value from the code",
+    "response_type": [
+      "code id_token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.3.2.10",
+      "OIDC-16.11"
+    ]
+  },
+  {
+    "id": 15,
+    "protocol_stage": "authn-response",
+    "category": "Access Token",
+    "priority": "Must",
+    "requirement": "Treat the Access Token as a secret",
+    "response_type": [
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-16.4"
+    ]
+  },
+  {
+    "id": 16,
+    "protocol_stage": "token-request",
+    "category": "authentication",
+    "priority": "Must",
+    "requirement": "Authenticate to the Token Endpoint using the method agreed at registration, or client_secret_basic by default",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.3.1",
+      "OIDC-3.3.1.1"
+    ]
+  },
+  {
+    "id": 17,
+    "protocol_stage": "token-response",
+    "category": "token_type",
+    "priority": "Must",
+    "requirement": "Validate the token_type is \\\"Bearer\\\"",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.3.3",
+      "OIDC-3.3.3.3"
+    ]
+  },
+  {
+    "id": 18,
+    "protocol_stage": "token-response",
+    "category": "id_token",
+    "priority": "Must",
+    "requirement": "Validate the id_token is present",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.3.3",
+      "OIDC-3.3.3.3",
+      "12.2"
+    ]
+  },
+  {
+    "id": 19,
+    "protocol_stage": "token-response",
+    "category": "Cache-Control",
+    "priority": "Must",
+    "requirement": "Validate the HTTP header Cache-Control has a value of \\\"no-store\\\"",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.3.3",
+      "OIDC-3.3.3.3",
+      "12.2"
+    ]
+  },
+  {
+    "id": 20,
+    "protocol_stage": "token-response",
+    "category": "Pragma",
+    "priority": "Must",
+    "requirement": "Validate the HTTP header Pragma has a value of \\\"no-cache\\\"",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.1.3.3",
+      "OIDC-3.3.3.3",
+      "12.2"
+    ]
+  },
+  {
+    "id": 21,
+    "protocol_stage": "token-response",
+    "category": "ID Token",
+    "priority": "Must",
+    "requirement": "Validate the iss and sub claims are identical in the ID Tokens returned from the Authorization Endpoint and the Token Endpoint",
+    "response_type": [
+      "code id_token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.3.3.6"
+    ]
+  },
+  {
+    "id": 22,
+    "protocol_stage": "token-response",
+    "category": "ID Token",
+    "priority": "Should",
+    "requirement": "Validate any common claims are identical if an ID Token is returned from the Authorization Endpoint and from the Token Endpoint",
+    "response_type": [
+      "code id_token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-3.3.3.6"
+    ]
+  },
+  {
+    "id": 23,
+    "protocol_stage": "token-response",
+    "category": "Access Token",
+    "priority": "Must",
+    "requirement": "Treat the Access Token as a secret",
+    "response_type": [
+      "code",
+      "code id_token"
+    ],
+    "reference": [
+      "OIDC-16.4"
+    ]
+  },
+  {
+    "id": 24,
+    "protocol_stage": "userinfo-request",
+    "category": "HTTPS",
+    "priority": "Must",
+    "requirement": "Validate that the UserInfo Endpoint scheme is https",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-5.3"
+    ]
+  },
+  {
+    "id": 25,
+    "protocol_stage": "userinfo-response",
+    "category": "HTTPS",
+    "priority": "Must",
+    "requirement": "Validate the server TLS certificate per RFC 6125",
+    "response_type": [
+      "code",
+      "code id_token",
+      "code token",
+      "code id_token token"
+    ],
+    "reference": [
+      "OIDC-5.3.4",
+      "OIDC-5.4"
+    ]
+  }
+]

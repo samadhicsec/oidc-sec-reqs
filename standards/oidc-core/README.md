@@ -14,8 +14,9 @@ The Implicit flow is not considered.
 
 The contents of the files are as follows:
 
-| File | Description |
-| ---- | ----|
-| oidc-core-sec-reqs-raw.json    | Security requirements extracted directly from the OIDC standard.  Categorised by section, role, flow, priority and step.  |
-| oidc-core-token-validation.json | De-duplicated ID token validation security requirements grouped by protocol stage, category, priority and response_type |
-| oidc-core-authz-server-reqs.json | De-duplicated Authorization Server (a.k.a OpenID Provider (OP), Relying Party) security requirements grouped by protocol stage, category, priority and response_type |
+| File | Description | Requirements Count |
+| ---- | ----| ---- |
+| oidc-core-sec-reqs-raw.json    | Security requirements extracted directly from the OIDC standard.  Categorised by section, role, flow, priority and step. | 167 |
+| oidc-core-client-reqs.json | De-duplicated Client security requirements grouped by protocol stage, category, priority and response_type | 26 |
+| oidc-core-token-validation.json | De-duplicated ID token validation security requirements grouped by protocol stage, category, priority and response_type | 24 |
+| oidc-core-authz-server-reqs.json | De-duplicated Authorization Server (a.k.a OpenID Provider (OP), Relying Party) security requirements grouped by protocol stage, category, priority and response_type | 80 |

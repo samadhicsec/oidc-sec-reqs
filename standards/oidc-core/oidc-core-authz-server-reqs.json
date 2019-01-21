@@ -1205,6 +1205,7 @@
       "code id_token token"
     ],
     "reference": [
+      "OIDC-16.9",
       "OIDC-16.18"
     ]
   },

@@ -280,7 +280,10 @@
       "OIDC-3.3.3.5",
       "OIDC-3.3.3.7",
       "OIDC-3.2.2.11",
-      "OIDC-3.3.2.12"
+      "OIDC-3.3.2.12",
+      "OIDC-16.2",
+      "OIDC-16.3",
+      "OIDC-16.6"
     ]
   },
   {
@@ -288,7 +291,7 @@
     "protocol_stage": "id-token-validation",
     "category": "Signature",
     "priority": "Must",
-    "requirement": "Validate the the JWT header alg value is one declared supported in the OIDC Discovery",
+    "requirement": "Validate the JWT header alg value is one declared supported in the OIDC Discovery",
     "response_type": [
       "code",
       "code id_token",
