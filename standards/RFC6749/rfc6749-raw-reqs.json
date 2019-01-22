@@ -1,0 +1,1853 @@
+[
+  {
+    "id": 0,
+    "section": [
+      "2"
+    ],
+    "recommendations": "The client developer SHALL specify the client type",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "client-registration-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate a client type was provided"
+  },
+  {
+    "id": 1,
+    "section": [
+      "2",
+      "3.1.2.2"
+    ],
+    "recommendations": "The client developer SHALL specify the redirect_uri",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "client-registration-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate a redirect_uri was provided"
+  },
+  {
+    "id": 2,
+    "section": [
+      "2.1"
+    ],
+    "recommendations": "The authorization server SHOULD NOT make assumptions about the client type.",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "client-registration-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate a client type was provided"
+  },
+  {
+    "id": 3,
+    "section": [
+      "2.2"
+    ],
+    "recommendations": "The client identifier is not a secret; it is exposed to the resource owner and MUST NOT be used alone for client authentication.",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Not authenticate the client using only the client identifier"
+  },
+  {
+    "id": 4,
+    "section": [
+      "2.2"
+    ],
+    "recommendations": "The client should avoid making assumptions about the identifier size.",
+    "role": [
+      "client"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "client-registration-response"
+    ],
+    "priority": "Should",
+    "requirement": "Handle client identifiers of any size"
+  },
+  {
+    "id": 5,
+    "section": [
+      "2.3"
+    ],
+    "recommendations": "The client MUST NOT use more than one authentication method in each request.",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Verify only 1 authentication method is used"
+  },
+  {
+    "id": 6,
+    "section": [
+      "2.3.1"
+    ],
+    "recommendations": "The authorization server MUST support the HTTP Basic authentication scheme for authenticating clients that were issued a client password.",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Support HTTP Basic Authentication for clients that were issued a client password"
+  },
+  {
+    "id": 7,
+    "section": [
+      "2.3.1"
+    ],
+    "recommendations": "the authorization server MAY support including the client credentials in the request-body",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Should",
+    "requirement": "Support Forms based authentication"
+  },
+  {
+    "id": 8,
+    "section": [
+      "2.3.1"
+    ],
+    "recommendations": "If Forms based authentication is supported then the client_id and client_secret parameters are REQUIRED",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the client_id and client_secret parameters are present when and if Forms based authentication is supported"
+  },
+  {
+    "id": 9,
+    "section": [
+      "2.3.1"
+    ],
+    "recommendations": "The client credential parameters can only be transmitted in the request-body and MUST NOT be included in the request URI.",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the client_id and client_secret are not sent in the request URI"
+  },
+  {
+    "id": 10,
+    "section": [
+      "2.3.1"
+    ],
+    "recommendations": "The authorization server MUST require the use of TLS as described in Section 1.6 when sending requests using password authentication.",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Require TLS"
+  },
+  {
+    "id": 11,
+    "section": [
+      "2.3.1",
+      "10.10"
+    ],
+    "recommendations": "Since this client authentication method involves a password, the authorization server MUST protect any endpoint utilizing it against brute force attacks.",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Implement controls to mitigate brute force attacks"
+  },
+  {
+    "id": 12,
+    "section": [
+      "2.3.1"
+    ],
+    "recommendations": "When using other authentication methods, the authorization server MUST define a mapping between the client identifier (registration record) and authentication scheme.",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate a client is the authentication method registered for that client"
+  },
+  {
+    "id": 13,
+    "section": [
+      "3.1"
+    ],
+    "recommendations": "The authorization server MUST first verify the identity of the resource owner.",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Authenticate the resource owner before obtaining an authorization grant"
+  },
+  {
+    "id": 14,
+    "section": [
+      "3.1"
+    ],
+    "recommendations": "The endpoint URI MUST NOT include a fragment component.",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Support a URI that does not include a fragment component"
+  },
+  {
+    "id": 15,
+    "section": [
+      "3.1",
+      "10.9"
+    ],
+    "recommendations": "Since requests to the authorization endpoint result in user authentication and the transmission of clear-text credentials (in the HTTP response), the authorization server MUST require the use of TLS as described in Section 1.6 when sending requests to the authorization endpoint.",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Require TLS"
+  },
+  {
+    "id": 16,
+    "section": [
+      "3.1"
+    ],
+    "recommendations": "The authorization server MUST support the use of the HTTP \"GET\" method",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Support the HTTP GET method"
+  },
+  {
+    "id": 17,
+    "section": [
+      "3.1"
+    ],
+    "recommendations": "MAY support the use of the \"POST\" method as well.",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Should",
+    "requirement": "Support the HTTP POST method"
+  },
+  {
+    "id": 18,
+    "section": [
+      "3.1"
+    ],
+    "recommendations": "Parameters sent without a value MUST be treated as if they were omitted from the request",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Treat empty parameters as if they were omitted from the request"
+  },
+  {
+    "id": 19,
+    "section": [
+      "3.1"
+    ],
+    "recommendations": "The authorization server MUST ignore unrecognized request parameters",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Ignore unrecognised request parameters"
+  },
+  {
+    "id": 20,
+    "section": [
+      "3.1"
+    ],
+    "recommendations": "Request and response parameters MUST NOT be included more than once.",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate that request parameters do not appear more than once"
+  },
+  {
+    "id": 21,
+    "section": [
+      "3.1"
+    ],
+    "recommendations": "Request and response parameters MUST NOT be included more than once.",
+    "role": [
+      "client"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "redirect"
+    ],
+    "priority": "Must",
+    "requirement": "Validate that response parameters do not appear more than once"
+  },
+  {
+    "id": 22,
+    "section": [
+      "3.1.1",
+      "4.1.1"
+    ],
+    "recommendations": "The value MUST be one of \"code\" for requesting an authorization code",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the response_type parameter has a value of \"code\""
+  },
+  {
+    "id": 23,
+    "section": [
+      "3.1.1",
+      "4.11"
+    ],
+    "recommendations": "If an authorization request is missing the \"response_type\" parameter, or if the response type is not understood, the authorization server MUST return an error response",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Return an error if the response_type is missing or not understood"
+  },
+  {
+    "id": 24,
+    "section": [
+      "3.1.2",
+      "3.1.2.2"
+    ],
+    "recommendations": "The redirection endpoint URI MUST be an absolute URI as defined by [RFC3986] Section 4.3",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "client-registration-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the redirect_uri is an absolute URI as defined by RFC3986"
+  },
+  {
+    "id": 25,
+    "section": [
+      "3.1.2"
+    ],
+    "recommendations": "The endpoint URI MAY include an \"application/x-www-form-urlencoded\" formatted (per Appendix B) query component ([RFC3986] Section 3.4) , which MUST be retained when adding additional query parameters",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "redirect"
+    ],
+    "priority": "Must",
+    "requirement": "Return any query component registered as part of the redirect_uri, even when additional query parameters are added"
+  },
+  {
+    "id": 26,
+    "section": [
+      "3.1.2"
+    ],
+    "recommendations": "The endpoint URI MUST NOT include a fragment component.",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "client-registration-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the redirect_uri does not include a fragment component"
+  },
+  {
+    "id": 27,
+    "section": [
+      "3.1.2.1",
+      "10.5"
+    ],
+    "recommendations": "The redirection endpoint SHOULD require the use of TLS",
+    "role": [
+      "client"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "client-registration-request"
+    ],
+    "priority": "Should",
+    "requirement": "Provide an HTTPS redirect_uri"
+  },
+  {
+    "id": 28,
+    "section": [
+      "3.1.2.1"
+    ],
+    "recommendations": "If TLS is not available, the authorization server SHOULD warn the resource owner about the insecure endpoint prior to redirection",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "consent"
+    ],
+    "priority": "Should",
+    "requirement": "Warn resource owner if client redirect_uri does not use HTTPS"
+  },
+  {
+    "id": 29,
+    "section": [
+      "3.1.2.2"
+    ],
+    "recommendations": "The authorization server MAY allow the client to register multiple redirection endpoints",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "client-registration-request"
+    ],
+    "priority": "Should",
+    "requirement": "Allow the client to register multiple redirect_uris"
+  },
+  {
+    "id": 30,
+    "section": [
+      "3.1.2.3"
+    ],
+    "recommendations": "If multiple redirection URIs have been registered, if only part of the redirection URI has been registered, or if no redirection URI has been registered, the client MUST include a redirection URI with the authorization request using the \"redirect_uri\" request parameter.",
+    "role": [
+      "client"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Include the redirect_uri if multiple redirect URIs, a partial redirect URI, or no redirection URI, has been registered"
+  },
+  {
+    "id": 31,
+    "section": [
+      "3.1.2.3"
+    ],
+    "recommendations": "When a redirection URI is included in an authorization request, the authorization server MUST compare and match the value received against at least one of the registered redirection URIs (or URI components) as defined in [RFC3986] Section 6, if any redirection URIs were registered.",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the redirect_uri matches, as defined in [RFC3986] Section 6, if any redirection URIs were registered"
+  },
+  {
+    "id": 32,
+    "section": [
+      "3.1.2.3"
+    ],
+    "recommendations": "If the client registration included the full redirection URI, the authorization server MUST compare the two URIs using simple string comparison as defined in [RFC3986] Section 6.2.1",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the redirect_uri matches a registered redirection URI using simple string comparison as defined in [RFC3986] Section 6.2.1"
+  },
+  {
+    "id": 33,
+    "section": [
+      "3.1.2.4",
+      "4.1.2.1"
+    ],
+    "recommendations": "If an authorization request fails validation due to a missing, invalid, or mismatching redirection URI, the authorization server SHOULD inform the resource owner of the error",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "consent"
+    ],
+    "priority": "Should",
+    "requirement": "Inform the resource owner if the redirect_uri parameter fails validation due to a missing, invalid, or mismatching redirection URI"
+  },
+  {
+    "id": 34,
+    "section": [
+      "3.1.2.4",
+      "4.1.2.1"
+    ],
+    "recommendations": "MUST NOT automatically redirect the user-agent to the invalid redirection URI",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Not redirect the resource owner user-agent if the redirect_uri parameter fails validation due to a missing, invalid, or mismatching redirection URI"
+  },
+  {
+    "id": 35,
+    "section": [
+      "3.1.2.5"
+    ],
+    "recommendations": "The client SHOULD NOT include any third-party scripts",
+    "role": [
+      "client"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "redirect"
+    ],
+    "priority": "Should",
+    "requirement": "Avoid including 3rd party scripts"
+  },
+  {
+    "id": 36,
+    "section": [
+      "3.1.2.5"
+    ],
+    "recommendations": "it SHOULD extract the credentials from the URI and redirect the user-agent again to another endpoint without exposing the credentials (in the URI or elsewhere)",
+    "role": [
+      "client"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "redirect"
+    ],
+    "priority": "Should",
+    "requirement": "Extract and remove credentials before redirecting to another endpoint which then does not receive the credentials"
+  },
+  {
+    "id": 37,
+    "section": [
+      "3.1.2.5"
+    ],
+    "recommendations": "If third-party scripts are included, the client MUST ensure that its own scripts (used to extract and remove the credentials from the URI) will execute first",
+    "role": [
+      "client"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "redirect"
+    ],
+    "priority": "Must",
+    "requirement": "Ensure client scripts execute before 3rd party scripts if the response includes 3rd party scripts, so credentials can be safely extracted and removed"
+  },
+  {
+    "id": 38,
+    "section": [
+      "3.2"
+    ],
+    "recommendations": "The endpoint URI MAY include an \"application/x-www-form-urlencoded\" formatted (per Appendix B) query component ([RFC3986] Section 3.4), which MUST be retained when adding additional query parameters",
+    "role": [
+      "client"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Retain any query parameters when the URI contains query parameters and more are added"
+  },
+  {
+    "id": 39,
+    "section": [
+      "3.2",
+      "10.3",
+      "10.4",
+      "10.8",
+      "10.9"
+    ],
+    "recommendations": "the authorization server MUST require the use of TLS",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Require TLS"
+  },
+  {
+    "id": 40,
+    "section": [
+      "3.2"
+    ],
+    "recommendations": "The client MUST use the HTTP \"POST\" method when making access token requests.",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Only support POST requests"
+  },
+  {
+    "id": 41,
+    "section": [
+      "3.2"
+    ],
+    "recommendations": "Parameters sent without a value MUST be treated as if they were omitted from the request",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Treat empty parameters as if they were omitted from the request"
+  },
+  {
+    "id": 42,
+    "section": [
+      "3.2"
+    ],
+    "recommendations": "The authorization server MUST ignore unrecognized request parameters",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Ignore unrecognised request parameters"
+  },
+  {
+    "id": 43,
+    "section": [
+      "3.2"
+    ],
+    "recommendations": "Request and response parameters MUST NOT be included more than once",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate that request parameters do not appear more than once"
+  },
+  {
+    "id": 44,
+    "section": [
+      "3.2"
+    ],
+    "recommendations": "Request and response parameters MUST NOT be included more than once",
+    "role": [
+      "client"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "token-response"
+    ],
+    "priority": "Must",
+    "requirement": "Validate that response parameters do not appear more than once"
+  },
+  {
+    "id": 45,
+    "section": [
+      "3.3",
+      "5.1"
+    ],
+    "recommendations": "If the issued access token scope is different from the one requested by the client, the authorization server MUST include the \"scope\" response parameter to inform the client of the actual scope granted",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "token-response"
+    ],
+    "priority": "Must",
+    "requirement": "Include the scope parameter containing the actual granted scopes if it is different from the scope requested"
+  },
+  {
+    "id": 46,
+    "section": [
+      "3.3"
+    ],
+    "recommendations": "If the client omits the scope parameter when requesting authorization, the authorization server MUST either process the request using a pre-defined default value or fail the request indicating an invalid scope",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Use a documented default scope, or error, if the no scope parameter is sent"
+  },
+  {
+    "id": 47,
+    "section": [
+      "4.1.1"
+    ],
+    "recommendations": "REQUIRED. The client identifier",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the client_id is present"
+  },
+  {
+    "id": 48,
+    "section": [
+      "4.1.1",
+      "10.12"
+    ],
+    "recommendations": "The state parameter SHOULD be used for preventing cross-site request forgery",
+    "role": [
+      "client"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Should",
+    "requirement": "Protect against Cross-site Request Forgery using the state parameter"
+  },
+  {
+    "id": 49,
+    "section": [
+      "4.1.2"
+    ],
+    "recommendations": "Code query parameter REQUIRED",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "redirect"
+    ],
+    "priority": "Must",
+    "requirement": "Include a code parameter in the query component of the redirection URI"
+  },
+  {
+    "id": 50,
+    "section": [
+      "4.1.2",
+      "10.5"
+    ],
+    "recommendations": "The authorization code MUST expire shortly after it is issued to mitigate the risk of leaks",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Expire the authorization code shortly after it is issued"
+  },
+  {
+    "id": 51,
+    "section": [
+      "4.1.2"
+    ],
+    "recommendations": "A maximum authorization code lifetime of 10 minutes is RECOMMENDED",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Should",
+    "requirement": "Limit the lifetime of the authorization code to 10 minutes"
+  },
+  {
+    "id": 52,
+    "section": [
+      "4.1.2",
+      "10.5"
+    ],
+    "recommendations": "The client MUST NOT use the authorization code more than once. If an authorization code is used more than once, the authorization server MUST deny the request",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the authorization code has not been used before"
+  },
+  {
+    "id": 53,
+    "section": [
+      "4.1.2",
+      "10.5"
+    ],
+    "recommendations": "If an authorization code is used more than once it SHOULD revoke (when possible) all tokens previously issued based on that authorization code",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Should",
+    "requirement": "Revoke all previous access tokens associated with an authorization code if it is used more than once"
+  },
+  {
+    "id": 54,
+    "section": [
+      "4.1.2"
+    ],
+    "recommendations": "REQUIRED if the \"state\" parameter was present in the client authorization request",
+    "role": [
+      "client"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "redirect"
+    ],
+    "priority": "Must",
+    "requirement": "Validate a state parameter was returned if it was included in the request"
+  },
+  {
+    "id": 55,
+    "section": [
+      "4.1.2"
+    ],
+    "recommendations": "State parameter must match the exact value received from the client.",
+    "role": [
+      "client"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "redirect"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the state parameter returned matches the one sent in the request"
+  },
+  {
+    "id": 56,
+    "section": [
+      "4.1.2",
+      "5.1"
+    ],
+    "recommendations": "The client MUST ignore unrecognized response parameters",
+    "role": [
+      "client"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "redirect",
+      "token-response"
+    ],
+    "priority": "Must",
+    "requirement": "Ignore unrecognised parameters"
+  },
+  {
+    "id": 57,
+    "section": [
+      "4.1.2",
+      "5.1"
+    ],
+    "recommendations": "The client should avoid making assumptions about code value sizes",
+    "role": [
+      "client"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "redirect",
+      "token-response"
+    ],
+    "priority": "Should",
+    "requirement": "Support arbitrary authorization code, token, or other parameter size"
+  },
+  {
+    "id": 58,
+    "section": [
+      "4.1.2.1"
+    ],
+    "recommendations": "Inform the resource owner if the client_id is missing or invalid",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Should",
+    "requirement": "Inform the resource owner if the client_id parameter is missing or invalid"
+  },
+  {
+    "id": 59,
+    "section": [
+      "4.1.2.1"
+    ],
+    "recommendations": "Not redirect the resource owner user-agent if the client_id parameter is missing or invalid",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Not redirect the resource owner user-agent if the client_id parameter is missing or invalid"
+  },
+  {
+    "id": 60,
+    "section": [
+      "4.1.3",
+      "4.4",
+      "6"
+    ],
+    "recommendations": "grant_type parameter REQUIRED. Value MUST be set to \"authorization_code\"",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the grant_type parameter is present and has value of â€œauthorization_codeâ€, â€œclient_credentialsâ€, or â€œrefresh_tokenâ€"
+  },
+  {
+    "id": 61,
+    "section": [
+      "4.1.3"
+    ],
+    "recommendations": "code parameter REQUIRED",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the code parameter is present, when grant_type=â€authorization_codeâ€"
+  },
+  {
+    "id": 62,
+    "section": [
+      "4.1.3",
+      "10.6"
+    ],
+    "recommendations": "Redirect_uri parameter REQUIRED if the \"redirect_uri\" parameter was included in the authorization request as described in Section 4.1.1, and their values MUST be identical",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the redirect_uri is present and is identical to the one sent in the authorization request, if a redirect_uri was sent, when grant_type=â€authorization_codeâ€"
+  },
+  {
+    "id": 63,
+    "section": [
+      "4.1.3",
+      "4.4.2",
+      "6",
+      "10.2",
+      "10.5"
+    ],
+    "recommendations": "If the client type is confidential or the client was issued client credentials (or assigned other authentication requirements), the client MUST authenticate with the authorization server",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Authenticate the client"
+  },
+  {
+    "id": 64,
+    "section": [
+      "4.1.3"
+    ],
+    "recommendations": "ensure that the authorization code was issued to the authenticated confidential client",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate that the authorization code was issued to the authenticated client, when grant_type=â€authorization_codeâ€"
+  },
+  {
+    "id": 65,
+    "section": [
+      "4.1.3"
+    ],
+    "recommendations": "verify that the authorization code is valid",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate that the authorization code is valid, when grant_type=â€authorization_codeâ€"
+  },
+  {
+    "id": 66,
+    "section": [
+      "4.4.3"
+    ],
+    "recommendations": "A refresh token SHOULD NOT be included",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "client-creds"
+    ],
+    "step": [
+      "token-response"
+    ],
+    "priority": "Should",
+    "requirement": "Not issue a refresh token, when grant_type=â€client_credentialsâ€"
+  },
+  {
+    "id": 67,
+    "section": [
+      "5.1"
+    ],
+    "recommendations": "token_type parameter is REQUIRED. The type of the token issued as described in Section 7.1. Value is case insensitive",
+    "role": [
+      "client",
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "token-response"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the token_type parameter is in the response"
+  },
+  {
+    "id": 68,
+    "section": [
+      "5.1"
+    ],
+    "recommendations": "expires_in parameter is RECOMMENDED. The lifetime in seconds of the access token",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "token-response"
+    ],
+    "priority": "Should",
+    "requirement": "Return an expires_in parameter"
+  },
+  {
+    "id": 69,
+    "section": [
+      "5.1"
+    ],
+    "recommendations": "The parameters are included in the entity-body of the HTTP response using the \"application/json\" media type as defined by [RFC4627]. The parameters are serialized into a JavaScript Object Notation (JSON) structure by adding each parameter at the highest structure level",
+    "role": [
+      "client"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "token-response"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the response has Content-Type \"application/json\", that the response is valid JSON, and that each parameter exists at the highest structure level"
+  },
+  {
+    "id": 70,
+    "section": [
+      "5.1"
+    ],
+    "recommendations": "Parameter names and string values are included as JSON strings. Numerical values are included as JSON numbers",
+    "role": [
+      "client"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "token-response"
+    ],
+    "priority": "Must",
+    "requirement": "Validate that parameter names and string values are JSON strings and that numeric values are JSON numbers"
+  },
+  {
+    "id": 71,
+    "section": [
+      "5.1"
+    ],
+    "recommendations": "The authorization server MUST include the HTTP \"Cache-Control\" response header field [RFC2616] with a value of \"no-store\" in any response containing tokens, credentials, or other sensitive information",
+    "role": [
+      "client",
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "token-response"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the Cache-Control response header has the value â€œno-storeâ€"
+  },
+  {
+    "id": 72,
+    "section": [
+      "5.1"
+    ],
+    "recommendations": "The authorization server MUST include the HTTP \"Pragma\" response header field [RFC2616] with a value of \"no-cache\"",
+    "role": [
+      "client",
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "token-response"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the Pragma response header has the value â€œno-cacheâ€"
+  },
+  {
+    "id": 73,
+    "section": [
+      "6"
+    ],
+    "recommendations": "refresh_token parameter is REQUIRED",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the refresh_token parameter is present when grant_type=â€refresh_tokenâ€"
+  },
+  {
+    "id": 74,
+    "section": [
+      "6"
+    ],
+    "recommendations": "The requested scope MUST NOT include any scope not originally granted by the resource owner",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the scope parameter, if present, includes only the same grants as originally granted by the resource owner, when grant_type=â€refresh_tokenâ€"
+  },
+  {
+    "id": 75,
+    "section": [
+      "6"
+    ],
+    "recommendations": "The authorization server MUST validate the refresh token",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the refresh_token when, when grant_type=â€refresh_tokenâ€"
+  },
+  {
+    "id": 76,
+    "section": [
+      "6"
+    ],
+    "recommendations": "The authorization server MAY issue a new refresh token, in which case the client MUST discard the old refresh token and replace it with the new refresh token",
+    "role": [
+      "client"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "token-response"
+    ],
+    "priority": "Must",
+    "requirement": "Delete the old refresh_token if the authorization server issues a new refresh_token"
+  },
+  {
+    "id": 77,
+    "section": [
+      "6"
+    ],
+    "recommendations": "If a new refresh token is issued, the refresh token scope MUST be identical to that of the refresh token included by the client in the request",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate any new refresh_token issued has the identical scope to the refresh_token in the client request, when grant_type=â€refresh_tokenâ€"
+  },
+  {
+    "id": 78,
+    "section": [
+      "7.1"
+    ],
+    "recommendations": "The client MUST NOT use an access token if it does not understand the token type.",
+    "role": [
+      "client"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "token-response"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the token_type value is supported by the client"
+  },
+  {
+    "id": 79,
+    "section": [
+      "10.2"
+    ],
+    "recommendations": "The authorization server SHOULD enforce explicit resource owner authentication",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "consent"
+    ],
+    "priority": "Should",
+    "requirement": "Authenticate the resource owner"
+  },
+  {
+    "id": 80,
+    "section": [
+      "10.2"
+    ],
+    "recommendations": "The authorization server SHOULD provide the resource owner with information about the client and the requested authorization scope and lifetime",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "consent"
+    ],
+    "priority": "Should",
+    "requirement": "Provide the resource owner with information about the client and the requested authorization scope and lifetime"
+  },
+  {
+    "id": 81,
+    "section": [
+      "10.3"
+    ],
+    "recommendations": "The authorization server MUST ensure that access tokens cannot be generated, modified, or guessed to produce valid access tokens by unauthorized parties",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Ensure that access tokens cannot be generated, modified, or guessed to produce valid access tokens by unauthorized parties"
+  },
+  {
+    "id": 82,
+    "section": [
+      "10.4"
+    ],
+    "recommendations": "The authorization server MUST maintain the binding between a refresh token and the client to whom it was issued.",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate that the refresh_token was issued to the client presenting it, when grant_type=â€refresh_tokenâ€"
+  },
+  {
+    "id": 83,
+    "section": [
+      "10.4"
+    ],
+    "recommendations": "The authorization server MUST ensure that refresh tokens cannot be generated, modified, or guessed to produce valid refresh tokens by unauthorized parties",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Ensure that refresh tokens cannot be generated, modified, or guessed to produce valid refresh tokens by unauthorized parties"
+  },
+  {
+    "id": 84,
+    "section": [
+      "10.5"
+    ],
+    "recommendations": "If the client relies on the authorization code for its own resource owner authentication, the client redirection endpoint MUST require the use of TLS",
+    "role": [
+      "client"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "client-registration-request"
+    ],
+    "priority": "Must",
+    "requirement": "Use HTTPS for the redirect_uri if the client also uses the authorization code to authenticate the resource owner"
+  },
+  {
+    "id": 85,
+    "section": [
+      "10.5"
+    ],
+    "recommendations": "the authorization servers MUST ensure that the authorization code was issued to the same client",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the authorization code was issued to the authenticating client"
+  },
+  {
+    "id": 86,
+    "section": [
+      "10.8"
+    ],
+    "recommendations": "The \"state\" and \"scope\" parameters SHOULD NOT include sensitive client or resource owner information in plain text, as they can be transmitted over insecure channels or stored insecurely",
+    "role": [
+      "client"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "authn-request",
+      "token-request"
+    ],
+    "priority": "Should",
+    "requirement": "Not include sensitive client or resource owner information in plain text in the \"state\" or \"scope\" parameters"
+  },
+  {
+    "id": 87,
+    "section": [
+      "10.9"
+    ],
+    "recommendations": "The client MUST validate the authorization server's TLS certificate as defined by [RFC6125]",
+    "role": [
+      "client"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [
+      "authn-request",
+      "token-request"
+    ],
+    "priority": "Must",
+    "requirement": "Validate the authorization server's TLS certificate as defined by RFC6125"
+  },
+  {
+    "id": 88,
+    "section": [
+      "10.11"
+    ],
+    "recommendations": "To reduce the risk of phishing attacks, the authorization servers MUST require the use of TLS on every endpoint used for end-user interaction",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "consent"
+    ],
+    "priority": "Must",
+    "requirement": "Require TLS"
+  },
+  {
+    "id": 89,
+    "section": [
+      "10.12"
+    ],
+    "recommendations": "The client MUST implement CSRF protection for its redirection URI",
+    "role": [
+      "client"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "redirect"
+    ],
+    "priority": "Must",
+    "requirement": "Implement CSRF protection"
+  },
+  {
+    "id": 90,
+    "section": [
+      "10.12"
+    ],
+    "recommendations": "The binding value used for CSRF protection MUST contain a non-guessable value (as described in Section 10.10)",
+    "role": [
+      "client"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "redirect"
+    ],
+    "priority": "Must",
+    "requirement": "CSRF value should be generated using at least a 128-bit (preferable 160 bit) random number, if implemented in the â€œstateâ€ parameter"
+  },
+  {
+    "id": 91,
+    "section": [
+      "10.12"
+    ],
+    "recommendations": "The user-agent's authenticated state (e.g., session cookie, HTML5 local storage) MUST be kept in a location accessible only to the client and the user-agent (i.e., protected by same-origin policy)",
+    "role": [
+      "client"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "redirect"
+    ],
+    "priority": "Must",
+    "requirement": "Protect store user-agentâ€™s authenticated state information in a location protected by the Same Origin Policy"
+  },
+  {
+    "id": 92,
+    "section": [
+      "10.12"
+    ],
+    "recommendations": "The authorization server MUST implement CSRF protection for its authorization endpoint and ensure that a malicious client cannot obtain authorization without the awareness and explicit consent of the resource owner",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "authn-request"
+    ],
+    "priority": "Must",
+    "requirement": "Implement CSRF protection"
+  },
+  {
+    "id": 93,
+    "section": [
+      "10.13"
+    ],
+    "recommendations": "Prevent clickjacking",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "consent"
+    ],
+    "priority": "Must",
+    "requirement": "Use the X-Frame-Options header to prevent Clickjacking attack"
+  },
+  {
+    "id": 94,
+    "section": [
+      "10.15"
+    ],
+    "recommendations": "The authorization server, authorization endpoint, and client redirection endpoint can be improperly configured and operate as open redirectors",
+    "role": [
+      "client",
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code"
+    ],
+    "step": [
+      "authn-request",
+      "redirect"
+    ],
+    "priority": "Must",
+    "requirement": "Protect against open-redirect attacks"
+  },
+  {
+    "id": 95,
+    "section": [
+      "1.6"
+    ],
+    "recommendations": "Whenever Transport Layer Security (TLS) is used by this specification, the appropriate version (or versions) of TLS will vary over time, based on the widespread deployment and known security vulnerabilities.",
+    "role": [
+      "client",
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [],
+    "priority": "Should",
+    "requirement": "Use the latest version of TLS"
+  },
+  {
+    "id": 96,
+    "section": [
+      "10",
+      "10.3",
+      "10.4"
+    ],
+    "recommendations": "Web application clients MUST ensure confidentiality of client passwords and other client credentials",
+    "role": [
+      "client"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [],
+    "priority": "Must",
+    "requirement": "Securely store client passwords and other credentials"
+  },
+  {
+    "id": 97,
+    "section": [
+      "10.10"
+    ],
+    "recommendations": "The probability of an attacker guessing generated tokens (and other credentials not intended for handling by end-users) MUST be less than or equal to 2^(-128) and SHOULD be less than or equal to 2^(-160)",
+    "role": [
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [],
+    "priority": "Must",
+    "requirement": "Generate access tokens, authorization codes, refresh tokens and client credentials using at least a 128 bit random number to prevent these from being guessed.  A 160-bit random number or larger is preferred"
+  },
+  {
+    "id": 98,
+    "section": [
+      "10.14"
+    ],
+    "recommendations": "The authorization server and client MUST sanitize (and validate when possible) any value received -- in particular, the value of the \"state\" and \"redirect_uri\" parameters",
+    "role": [
+      "client",
+      "authorization-server"
+    ],
+    "grant": [
+      "authz-code",
+      "client-creds"
+    ],
+    "step": [],
+    "priority": "Must",
+    "requirement": "Sanitize and validate (when possible) all received values, particularly the \"state\" and \"redirect_uri\" parameters"
+  }
+]
