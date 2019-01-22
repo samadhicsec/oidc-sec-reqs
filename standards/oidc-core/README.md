@@ -25,6 +25,7 @@ The files are as follows:
 The contents of the files (excluding oidc-core-sec-reqs-raw.json) are a JSON array of the following object:
 
 | Key | Value Description |
+| ---- | ----|
 | id  | An internal ID, do not use |
 | protocol_stage | One of: all, authn-request, redirect, token-request, token-response, userinfo-request, userinfo-response, login-init |
 | category | Arbitrary description of the part of the protocol_stage the requirement applies to |
