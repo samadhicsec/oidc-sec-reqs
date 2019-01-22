@@ -1,0 +1,112 @@
+[
+  {
+    "id": 0,
+    "protocol_stage": "all",
+    "category": "Flow",
+    "priority": "Could",
+    "requirement": "Avoid the disclosure of sensitive data in the token by using the authorisation code flow",
+    "response_type": [],
+    "reference": [
+      "OIDC-16.5"
+    ]
+  },
+  {
+    "id": 1,
+    "protocol_stage": "all",
+    "category": "TLS",
+    "priority": "Must",
+    "requirement": "Use a TLS ciphersuite that provides confidentiality and integrity protection",
+    "response_type": [],
+    "reference": [
+      "OIDC-16.17"
+    ]
+  },
+  {
+    "id": 2,
+    "protocol_stage": "all",
+    "category": "TLS",
+    "priority": "Must",
+    "requirement": "Validate the server TLS certificate per RFC 6125",
+    "response_type": [],
+    "reference": [
+      "OIDC-16.17"
+    ]
+  },
+  {
+    "id": 3,
+    "protocol_stage": "all",
+    "category": "Strings",
+    "priority": "Must",
+    "requirement": "Compare strings after removing JSON escaping",
+    "response_type": [],
+    "reference": [
+      "OIDC-14"
+    ]
+  },
+  {
+    "id": 4,
+    "protocol_stage": "all",
+    "category": "Strings",
+    "priority": "Must",
+    "requirement": "Compare strings without applying Unicode normalisation to any Unicode code point I neither the JSON string or the string it is being compared to.",
+    "response_type": [],
+    "reference": [
+      "OIDC-14"
+    ]
+  },
+  {
+    "id": 5,
+    "protocol_stage": "all",
+    "category": "Strings",
+    "priority": "Must",
+    "requirement": "Compare strings as a Unicode code point to code point equality comparison",
+    "response_type": [],
+    "reference": [
+      "OIDC-14"
+    ]
+  },
+  {
+    "id": 6,
+    "protocol_stage": "all",
+    "category": "Strings",
+    "priority": "Must",
+    "requirement": "Only allow a single ASCII space character (0x20) as the delimiter for lists of strings",
+    "response_type": [],
+    "reference": [
+      "OIDC-14"
+    ]
+  },
+  {
+    "id": 7,
+    "protocol_stage": "all",
+    "category": "Crypto",
+    "priority": "Must",
+    "requirement": "Complete all cryptographic operations in full before terminating due to errors and not respond with detailed error information (in the case of an error) to the requestor",
+    "response_type": [],
+    "reference": [
+      "OIDC-16.12"
+    ]
+  },
+  {
+    "id": 8,
+    "protocol_stage": "all",
+    "category": "Crypto",
+    "priority": "Must",
+    "requirement": "Provide controls to mitigate the threats described in the Security Considerations of the JWT specification",
+    "response_type": [],
+    "reference": [
+      "OIDC-16.13"
+    ]
+  },
+  {
+    "id": 9,
+    "protocol_stage": "all",
+    "category": "Crypto",
+    "priority": "Must",
+    "requirement": "Sign then encrypt, if signing and encrypting JWTs",
+    "response_type": [],
+    "reference": [
+      "OIDC-16.14"
+    ]
+  }
+]
