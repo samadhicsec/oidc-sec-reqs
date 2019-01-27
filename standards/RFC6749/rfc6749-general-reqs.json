@@ -1,0 +1,60 @@
+[
+  {
+    "id": 0,
+    "protocol_stage": "All",
+    "category": "TLS",
+    "priority": "Should",
+    "requirement": "Use the latest version of TLS",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-1.6"
+    ]
+  },
+  {
+    "id": 1,
+    "protocol_stage": "All",
+    "category": "Credentials",
+    "priority": "Must",
+    "requirement": "Securely store client passwords and other credentials",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-10",
+      "rfc6749-10.3",
+      "rfc6749-10.4"
+    ]
+  },
+  {
+    "id": 2,
+    "protocol_stage": "All",
+    "category": "Randomness",
+    "priority": "Must",
+    "requirement": "Generate access tokens, authorization codes, refresh tokens and client credentials using at least a 128 bit random number to prevent these from being guessed. A 160-bit random number or larger is preferred",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-10.10"
+    ]
+  },
+  {
+    "id": 3,
+    "protocol_stage": "All",
+    "category": "Validation",
+    "priority": "Must",
+    "requirement": "Sanitize and validate (when possible) all received values, particularly the \"state\" and \"redirect_uri\" parameters",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-10.14"
+    ]
+  }
+]

@@ -9,8 +9,8 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "client-registration-request"
@@ -29,7 +29,7 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "client-registration-request"
@@ -47,8 +47,8 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "client-registration-request"
@@ -66,8 +66,8 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "token-request"
@@ -85,8 +85,8 @@
       "client"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "client-registration-response"
@@ -104,8 +104,8 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "token-request"
@@ -123,8 +123,8 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "token-request"
@@ -142,8 +142,8 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "token-request"
@@ -161,8 +161,8 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "token-request"
@@ -180,8 +180,8 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "token-request"
@@ -199,8 +199,8 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "token-request"
@@ -219,8 +219,8 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "token-request"
@@ -238,8 +238,8 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "token-request"
@@ -257,10 +257,10 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
-      "authn-request"
+      "consent"
     ],
     "priority": "Must",
     "requirement": "Authenticate the resource owner before obtaining an authorization grant"
@@ -275,7 +275,7 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "authn-request"
@@ -294,7 +294,7 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "authn-request"
@@ -312,7 +312,7 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "authn-request"
@@ -330,7 +330,7 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "authn-request"
@@ -348,7 +348,7 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "authn-request"
@@ -366,7 +366,7 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "authn-request"
@@ -384,7 +384,7 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "authn-request"
@@ -402,7 +402,7 @@
       "client"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "redirect"
@@ -421,7 +421,7 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "authn-request"
@@ -433,14 +433,14 @@
     "id": 23,
     "section": [
       "3.1.1",
-      "4.11"
+      "4.1.1"
     ],
     "recommendations": "If an authorization request is missing the \"response_type\" parameter, or if the response type is not understood, the authorization server MUST return an error response",
     "role": [
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "authn-request"
@@ -459,7 +459,7 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "client-registration-request"
@@ -477,7 +477,7 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "redirect"
@@ -495,7 +495,7 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "client-registration-request"
@@ -514,7 +514,7 @@
       "client"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "client-registration-request"
@@ -532,7 +532,7 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "consent"
@@ -550,7 +550,7 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "client-registration-request"
@@ -568,7 +568,7 @@
       "client"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "authn-request"
@@ -586,7 +586,7 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "authn-request"
@@ -604,7 +604,7 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "authn-request"
@@ -623,7 +623,7 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "consent"
@@ -642,10 +642,10 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
-      "authn-request"
+      "redirect"
     ],
     "priority": "Must",
     "requirement": "Not redirect the resource owner user-agent if the redirect_uri parameter fails validation due to a missing, invalid, or mismatching redirection URI"
@@ -660,7 +660,7 @@
       "client"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "redirect"
@@ -678,7 +678,7 @@
       "client"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "redirect"
@@ -696,7 +696,7 @@
       "client"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "redirect"
@@ -714,8 +714,8 @@
       "client"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "token-request"
@@ -737,8 +737,8 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "token-request"
@@ -756,8 +756,8 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "token-request"
@@ -775,8 +775,8 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "token-request"
@@ -794,8 +794,8 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "token-request"
@@ -813,8 +813,8 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "token-request"
@@ -832,8 +832,8 @@
       "client"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "token-response"
@@ -852,8 +852,8 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "token-response"
@@ -871,8 +871,7 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code"
     ],
     "step": [
       "authn-request"
@@ -890,7 +889,7 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "authn-request"
@@ -909,7 +908,7 @@
       "client"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "authn-request"
@@ -927,7 +926,7 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "redirect"
@@ -946,10 +945,10 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
-      "authn-request"
+      "redirect"
     ],
     "priority": "Must",
     "requirement": "Expire the authorization code shortly after it is issued"
@@ -964,10 +963,10 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
-      "authn-request"
+      "redirect"
     ],
     "priority": "Should",
     "requirement": "Limit the lifetime of the authorization code to 10 minutes"
@@ -983,10 +982,10 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
-      "authn-request"
+      "token-request"
     ],
     "priority": "Must",
     "requirement": "Validate the authorization code has not been used before"
@@ -1002,10 +1001,10 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
-      "authn-request"
+      "token-request"
     ],
     "priority": "Should",
     "requirement": "Revoke all previous access tokens associated with an authorization code if it is used more than once"
@@ -1020,7 +1019,7 @@
       "client"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "redirect"
@@ -1038,7 +1037,7 @@
       "client"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "redirect"
@@ -1057,8 +1056,8 @@
       "client"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "redirect",
@@ -1078,8 +1077,8 @@
       "client"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "redirect",
@@ -1098,10 +1097,10 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
-      "authn-request"
+      "consent"
     ],
     "priority": "Should",
     "requirement": "Inform the resource owner if the client_id parameter is missing or invalid"
@@ -1116,10 +1115,10 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
-      "authn-request"
+      "consent"
     ],
     "priority": "Must",
     "requirement": "Not redirect the resource owner user-agent if the client_id parameter is missing or invalid"
@@ -1136,14 +1135,14 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "token-request"
     ],
     "priority": "Must",
-    "requirement": "Validate the grant_type parameter is present and has value of â€œauthorization_codeâ€, â€œclient_credentialsâ€, or â€œrefresh_tokenâ€"
+    "requirement": "Validate the grant_type parameter is present and has value of \"authorization_code\", \"client_credentials\", or \"refresh_token\""
   },
   {
     "id": 61,
@@ -1155,13 +1154,13 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "token-request"
     ],
     "priority": "Must",
-    "requirement": "Validate the code parameter is present, when grant_type=â€authorization_codeâ€"
+    "requirement": "Validate the code parameter is present, when grant_type=\"authorization_code\""
   },
   {
     "id": 62,
@@ -1174,13 +1173,13 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "token-request"
     ],
     "priority": "Must",
-    "requirement": "Validate the redirect_uri is present and is identical to the one sent in the authorization request, if a redirect_uri was sent, when grant_type=â€authorization_codeâ€"
+    "requirement": "Validate the redirect_uri is present and is identical to the one sent in the authorization request, if a redirect_uri was sent, when grant_type=\"authorization_code\""
   },
   {
     "id": 63,
@@ -1196,7 +1195,8 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "token-request"
@@ -1214,13 +1214,13 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "token-request"
     ],
     "priority": "Must",
-    "requirement": "Validate that the authorization code was issued to the authenticated client, when grant_type=â€authorization_codeâ€"
+    "requirement": "Validate that the authorization code was issued to the authenticated client, when grant_type=\"authorization_code\""
   },
   {
     "id": 65,
@@ -1232,13 +1232,13 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "token-request"
     ],
     "priority": "Must",
-    "requirement": "Validate that the authorization code is valid, when grant_type=â€authorization_codeâ€"
+    "requirement": "Validate that the authorization code is valid, when grant_type=\"authorization_code\""
   },
   {
     "id": 66,
@@ -1250,13 +1250,13 @@
       "authorization-server"
     ],
     "grant": [
-      "client-creds"
+      "client_credentials"
     ],
     "step": [
       "token-response"
     ],
     "priority": "Should",
-    "requirement": "Not issue a refresh token, when grant_type=â€client_credentialsâ€"
+    "requirement": "Not issue a refresh token, when grant_type=\"client_credentials\""
   },
   {
     "id": 67,
@@ -1269,8 +1269,8 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "token-response"
@@ -1288,8 +1288,8 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "token-response"
@@ -1307,8 +1307,8 @@
       "client"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "token-response"
@@ -1326,8 +1326,8 @@
       "client"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "token-response"
@@ -1346,14 +1346,14 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "token-response"
     ],
     "priority": "Must",
-    "requirement": "Validate the Cache-Control response header has the value â€œno-storeâ€"
+    "requirement": "Validate the Cache-Control response header has the value \"no-store\""
   },
   {
     "id": 72,
@@ -1366,14 +1366,14 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "token-response"
     ],
     "priority": "Must",
-    "requirement": "Validate the Pragma response header has the value â€œno-cacheâ€"
+    "requirement": "Validate the Pragma response header has the value \"no-cache\""
   },
   {
     "id": 73,
@@ -1385,13 +1385,13 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "token-request"
     ],
     "priority": "Must",
-    "requirement": "Validate the refresh_token parameter is present when grant_type=â€refresh_tokenâ€"
+    "requirement": "Validate the refresh_token parameter is present when grant_type=\"refresh_token\""
   },
   {
     "id": 74,
@@ -1403,13 +1403,13 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "token-request"
     ],
     "priority": "Must",
-    "requirement": "Validate the scope parameter, if present, includes only the same grants as originally granted by the resource owner, when grant_type=â€refresh_tokenâ€"
+    "requirement": "Validate the scope parameter, if present, includes only the same grants as originally granted by the resource owner, when grant_type=\"refresh_token\""
   },
   {
     "id": 75,
@@ -1421,13 +1421,13 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "token-request"
     ],
     "priority": "Must",
-    "requirement": "Validate the refresh_token when, when grant_type=â€refresh_tokenâ€"
+    "requirement": "Validate the refresh_token when, when grant_type=\"refresh_token\""
   },
   {
     "id": 76,
@@ -1439,7 +1439,7 @@
       "client"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "token-response"
@@ -1457,13 +1457,13 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "token-request"
     ],
     "priority": "Must",
-    "requirement": "Validate any new refresh_token issued has the identical scope to the refresh_token in the client request, when grant_type=â€refresh_tokenâ€"
+    "requirement": "Validate any new refresh_token issued has the identical scope to the refresh_token in the client request, when grant_type=\"refresh_token\""
   },
   {
     "id": 78,
@@ -1475,8 +1475,8 @@
       "client"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "token-response"
@@ -1494,7 +1494,7 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "consent"
@@ -1512,7 +1512,7 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "consent"
@@ -1530,10 +1530,10 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
-      "token-request"
+      "token-response"
     ],
     "priority": "Must",
     "requirement": "Ensure that access tokens cannot be generated, modified, or guessed to produce valid access tokens by unauthorized parties"
@@ -1548,13 +1548,13 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "token-request"
     ],
     "priority": "Must",
-    "requirement": "Validate that the refresh_token was issued to the client presenting it, when grant_type=â€refresh_tokenâ€"
+    "requirement": "Validate that the refresh_token was issued to the client presenting it, when grant_type=\"refresh_token\""
   },
   {
     "id": 83,
@@ -1566,10 +1566,10 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
-      "token-request"
+      "token-response"
     ],
     "priority": "Must",
     "requirement": "Ensure that refresh tokens cannot be generated, modified, or guessed to produce valid refresh tokens by unauthorized parties"
@@ -1584,7 +1584,7 @@
       "client"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "client-registration-request"
@@ -1602,7 +1602,7 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "token-request"
@@ -1620,8 +1620,8 @@
       "client"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "authn-request",
@@ -1640,8 +1640,8 @@
       "client"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [
       "authn-request",
@@ -1660,7 +1660,7 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "consent"
@@ -1678,7 +1678,7 @@
       "client"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "redirect"
@@ -1696,13 +1696,13 @@
       "client"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "redirect"
     ],
     "priority": "Must",
-    "requirement": "CSRF value should be generated using at least a 128-bit (preferable 160 bit) random number, if implemented in the â€œstateâ€ parameter"
+    "requirement": "CSRF value should be generated using at least a 128-bit (preferable 160 bit) random number, if implemented in the \"state\" parameter"
   },
   {
     "id": 91,
@@ -1714,7 +1714,7 @@
       "client"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "redirect"
@@ -1732,7 +1732,7 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "authn-request"
@@ -1750,7 +1750,7 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
       "consent"
@@ -1769,10 +1769,9 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code"
+      "code"
     ],
     "step": [
-      "authn-request",
       "redirect"
     ],
     "priority": "Must",
@@ -1789,8 +1788,8 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [],
     "priority": "Should",
@@ -1808,8 +1807,8 @@
       "client"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [],
     "priority": "Must",
@@ -1825,8 +1824,8 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [],
     "priority": "Must",
@@ -1843,8 +1842,8 @@
       "authorization-server"
     ],
     "grant": [
-      "authz-code",
-      "client-creds"
+      "code",
+      "client_credentials"
     ],
     "step": [],
     "priority": "Must",

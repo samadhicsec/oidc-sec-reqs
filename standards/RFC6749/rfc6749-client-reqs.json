@@ -1,0 +1,465 @@
+[
+  {
+    "id": 0,
+    "protocol_stage": "client-registration-request",
+    "category": "redirect_uri",
+    "priority": "Should",
+    "requirement": "Provide an HTTPS redirect_uri",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-3.1.2.1",
+      "rfc6749-10.5"
+    ]
+  },
+  {
+    "id": 1,
+    "protocol_stage": "client-registration-request",
+    "category": "redirect_uri",
+    "priority": "Must",
+    "requirement": "Use HTTPS for the redirect_uri if the authorization code is also used authenticate the resource owner",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-10.5"
+    ]
+  },
+  {
+    "id": 2,
+    "protocol_stage": "client-registration-response",
+    "category": "client_id",
+    "priority": "Should",
+    "requirement": "Handle client identifiers of any size",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-2.2"
+    ]
+  },
+  {
+    "id": 3,
+    "protocol_stage": "authn-request",
+    "category": "HTTPS",
+    "priority": "Must",
+    "requirement": "Validate the authorization server's TLS certificate as defined by RFC6125",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-10.9"
+    ]
+  },
+  {
+    "id": 4,
+    "protocol_stage": "authn-request",
+    "category": "CSRF",
+    "priority": "Should",
+    "requirement": "Protect against Cross-site Request Forgery using the state parameter",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-4.1.1",
+      "rfc6749-10.12"
+    ]
+  },
+  {
+    "id": 5,
+    "protocol_stage": "authn-request",
+    "category": "redirect_uri",
+    "priority": "Must",
+    "requirement": "Include the redirect_uri if multiple redirect URIs, a partial redirect URI, or no redirection URI, has been registered",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-3.1.2.3"
+    ]
+  },
+  {
+    "id": 6,
+    "protocol_stage": "authn-request",
+    "category": "state",
+    "priority": "Should",
+    "requirement": "Not include sensitive client or resource owner information in plain text in the \"state\" parameter",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-10.8"
+    ]
+  },
+  {
+    "id": 7,
+    "protocol_stage": "authn-request",
+    "category": "scope",
+    "priority": "Should",
+    "requirement": "Not include sensitive client or resource owner information in plain text in the \"scope\" parameter",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-10.8"
+    ]
+  },
+  {
+    "id": 8,
+    "protocol_stage": "redirect",
+    "category": "open-redirect",
+    "priority": "Must",
+    "requirement": "Protect against open-redirect attacks",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-10.15"
+    ]
+  },
+  {
+    "id": 9,
+    "protocol_stage": "redirect",
+    "category": "CSRF",
+    "priority": "Must",
+    "requirement": "Implement CSRF protection",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-10.12"
+    ]
+  },
+  {
+    "id": 10,
+    "protocol_stage": "redirect",
+    "category": "CSRF",
+    "priority": "Must",
+    "requirement": "Generate a CSRF value that uses at least a 128-bit (preferable 160 bit) random number, if implemented in the \"state\" parameter",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-10.12"
+    ]
+  },
+  {
+    "id": 11,
+    "protocol_stage": "redirect",
+    "category": "user-session",
+    "priority": "Must",
+    "requirement": "Protect store user-agent's authenticated state information in a location protected by the Same Origin Policy",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-10.12"
+    ]
+  },
+  {
+    "id": 12,
+    "protocol_stage": "redirect",
+    "category": "state",
+    "priority": "Must",
+    "requirement": "Validate a state parameter was returned if it was included in the request",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-4.1.2"
+    ]
+  },
+  {
+    "id": 13,
+    "protocol_stage": "redirect",
+    "category": "state",
+    "priority": "Must",
+    "requirement": "Validate the state parameter returned matches the one sent in the request",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-4.1.2"
+    ]
+  },
+  {
+    "id": 14,
+    "protocol_stage": "redirect",
+    "category": "parameters",
+    "priority": "Must",
+    "requirement": "Validate that response parameters do not appear more than once",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-3.1"
+    ]
+  },
+  {
+    "id": 15,
+    "protocol_stage": "redirect",
+    "category": "parameters",
+    "priority": "Must",
+    "requirement": "Ignore unrecognised parameters",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-4.1.2",
+      "rfc6749-5.1"
+    ]
+  },
+  {
+    "id": 16,
+    "protocol_stage": "redirect",
+    "category": "parameters",
+    "priority": "Should",
+    "requirement": "Support arbitrary authorization code, token, or other parameter size",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-4.1.2",
+      "rfc6749-5.1"
+    ]
+  },
+  {
+    "id": 17,
+    "protocol_stage": "redirect",
+    "category": "response",
+    "priority": "Should",
+    "requirement": "Avoid including 3rd party scripts",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-3.1.2.5"
+    ]
+  },
+  {
+    "id": 18,
+    "protocol_stage": "redirect",
+    "category": "response",
+    "priority": "Must",
+    "requirement": "Ensure client scripts execute before 3rd party scripts if the response includes 3rd party scripts, so credentials can be safely extracted and removed",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-3.1.2.5"
+    ]
+  },
+  {
+    "id": 19,
+    "protocol_stage": "redirect",
+    "category": "response",
+    "priority": "Should",
+    "requirement": "Extract and remove credentials before redirecting to another endpoint which then does not receive the credentials",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-3.1.2.5"
+    ]
+  },
+  {
+    "id": 20,
+    "protocol_stage": "token-request",
+    "category": "HTTPS",
+    "priority": "Must",
+    "requirement": "Validate the authorization server's TLS certificate as defined by RFC6125",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-10.9"
+    ]
+  },
+  {
+    "id": 21,
+    "protocol_stage": "token-request",
+    "category": "parameters",
+    "priority": "Must",
+    "requirement": "Retain any query parameters when the URI contains query parameters and more are added",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-3.2"
+    ]
+  },
+  {
+    "id": 22,
+    "protocol_stage": "token-request",
+    "category": "state",
+    "priority": "Should",
+    "requirement": "Not include sensitive client or resource owner information in plain text in the \"state\" parameter",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-10.8"
+    ]
+  },
+  {
+    "id": 23,
+    "protocol_stage": "token-request",
+    "category": "scope",
+    "priority": "Should",
+    "requirement": "Not include sensitive client or resource owner information in plain text in the \"scope\" parameter",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-10.8"
+    ]
+  },
+  {
+    "id": 24,
+    "protocol_stage": "token-response",
+    "category": "HTTP",
+    "priority": "Must",
+    "requirement": "Validate the Cache-Control response header has the value \"no-store\"",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-5.1"
+    ]
+  },
+  {
+    "id": 25,
+    "protocol_stage": "token-response",
+    "category": "HTTP",
+    "priority": "Must",
+    "requirement": "Validate the Pragma response header has the value \"no-cache\"",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-5.1"
+    ]
+  },
+  {
+    "id": 26,
+    "protocol_stage": "token-response",
+    "category": "parameters",
+    "priority": "Must",
+    "requirement": "Validate the response has Content-Type \"application/json\", that the response is valid JSON, and that each parameter exists at the highest structure level",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-5.1"
+    ]
+  },
+  {
+    "id": 27,
+    "protocol_stage": "token-response",
+    "category": "parameters",
+    "priority": "Must",
+    "requirement": "Validate that response parameters do not appear more than once",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-3.2"
+    ]
+  },
+  {
+    "id": 28,
+    "protocol_stage": "token-response",
+    "category": "parameters",
+    "priority": "Must",
+    "requirement": "Ignore unrecognised parameters",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-4.1.2",
+      "rfc6749-5.1"
+    ]
+  },
+  {
+    "id": 29,
+    "protocol_stage": "token-response",
+    "category": "parameters",
+    "priority": "Must",
+    "requirement": "Validate that parameter names and string values are JSON strings and that numeric values are JSON numbers",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-5.1"
+    ]
+  },
+  {
+    "id": 30,
+    "protocol_stage": "token-response",
+    "category": "parameters",
+    "priority": "Should",
+    "requirement": "Support arbitrary authorization code, token, or other parameter size",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-4.1.2",
+      "rfc6749-5.1"
+    ]
+  },
+  {
+    "id": 31,
+    "protocol_stage": "token-response",
+    "category": "token_type",
+    "priority": "Must",
+    "requirement": "Validate the token_type parameter is in the response",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-5.1"
+    ]
+  },
+  {
+    "id": 32,
+    "protocol_stage": "token-response",
+    "category": "token_type",
+    "priority": "Must",
+    "requirement": "Validate the token_type value is supported by the client",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-7.1"
+    ]
+  },
+  {
+    "id": 33,
+    "protocol_stage": "token-response",
+    "category": "refresh_token",
+    "priority": "Must",
+    "requirement": "Delete the old refresh_token if the authorization server issues a new refresh_token",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-6"
+    ]
+  }
+]

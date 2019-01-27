@@ -1,0 +1,921 @@
+[
+  {
+    "id": 0,
+    "protocol_stage": "client-registration-request",
+    "category": "client_type",
+    "priority": "Must",
+    "requirement": "Validate a client type was provided",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-2",
+      "rfc6749-2.1"
+    ]
+  },
+  {
+    "id": 1,
+    "protocol_stage": "client-registration-request",
+    "category": "redirect_uri",
+    "priority": "Must",
+    "requirement": "Validate a redirect_uri was provided",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-2",
+      "rfc6749-3.1.2.2"
+    ]
+  },
+  {
+    "id": 2,
+    "protocol_stage": "client-registration-request",
+    "category": "redirect_uri",
+    "priority": "Must",
+    "requirement": "Validate the redirect_uri is an absolute URI as defined by RFC3986",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-3.1.2",
+      "rfc6749-3.1.2.2"
+    ]
+  },
+  {
+    "id": 3,
+    "protocol_stage": "client-registration-request",
+    "category": "redirect_uri",
+    "priority": "Must",
+    "requirement": "Validate the redirect_uri does not include a fragment component",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-3.1.2"
+    ]
+  },
+  {
+    "id": 4,
+    "protocol_stage": "client-registration-request",
+    "category": "redirect_uri",
+    "priority": "Should",
+    "requirement": "Allow the client to register multiple redirect_uris",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-3.1.2.2"
+    ]
+  },
+  {
+    "id": 5,
+    "protocol_stage": "authn-request",
+    "category": "TLS",
+    "priority": "Must",
+    "requirement": "Require TLS",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-3.1",
+      "rfc6749-10.9"
+    ]
+  },
+  {
+    "id": 6,
+    "protocol_stage": "authn-request",
+    "category": "HTTP",
+    "priority": "Must",
+    "requirement": "Support the HTTP GET method",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-3.1"
+    ]
+  },
+  {
+    "id": 7,
+    "protocol_stage": "authn-request",
+    "category": "HTTP",
+    "priority": "Should",
+    "requirement": "Support the HTTP POST method",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-3.1"
+    ]
+  },
+  {
+    "id": 8,
+    "protocol_stage": "authn-request",
+    "category": "CSRF",
+    "priority": "Must",
+    "requirement": "Implement CSRF protection",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-10.12"
+    ]
+  },
+  {
+    "id": 9,
+    "protocol_stage": "authn-request",
+    "category": "endpoint",
+    "priority": "Must",
+    "requirement": "Not include a fragment component in the endpoint URI",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-3.1"
+    ]
+  },
+  {
+    "id": 10,
+    "protocol_stage": "authn-request",
+    "category": "parameters",
+    "priority": "Must",
+    "requirement": "Treat empty parameters as if they were omitted from the request",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-3.1"
+    ]
+  },
+  {
+    "id": 11,
+    "protocol_stage": "authn-request",
+    "category": "parameters",
+    "priority": "Must",
+    "requirement": "Ignore unrecognised request parameters",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-3.1"
+    ]
+  },
+  {
+    "id": 12,
+    "protocol_stage": "authn-request",
+    "category": "parameters",
+    "priority": "Must",
+    "requirement": "Validate that request parameters do not appear more than once",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-3.1"
+    ]
+  },
+  {
+    "id": 13,
+    "protocol_stage": "authn-request",
+    "category": "response_type",
+    "priority": "Must",
+    "requirement": "Validate the response_type parameter has a value of \"code\"",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-3.1.1",
+      "rfc6749-4.1.1"
+    ]
+  },
+  {
+    "id": 14,
+    "protocol_stage": "authn-request",
+    "category": "response_type",
+    "priority": "Must",
+    "requirement": "Return an error if the response_type is missing or not understood",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-3.1.1",
+      "rfc6749-4.1.1"
+    ]
+  },
+  {
+    "id": 15,
+    "protocol_stage": "authn-request",
+    "category": "redirect_uri",
+    "priority": "Must",
+    "requirement": "Validate the redirect_uri matches, as defined in [RFC3986] Section 6, using simple string comparison, if any redirection URIs were registered",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-3.1.2.3"
+    ]
+  },
+  {
+    "id": 16,
+    "protocol_stage": "authn-request",
+    "category": "client_id",
+    "priority": "Must",
+    "requirement": "Validate the client_id is present",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-4.1.1"
+    ]
+  },
+  {
+    "id": 17,
+    "protocol_stage": "authn-request",
+    "category": "scope",
+    "priority": "Must",
+    "requirement": "Use a documented default scope, or error, if the no scope parameter is sent",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-3.3"
+    ]
+  },
+  {
+    "id": 18,
+    "protocol_stage": "consent",
+    "category": "TLS",
+    "priority": "Must",
+    "requirement": "Require TLS",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-10.11"
+    ]
+  },
+  {
+    "id": 19,
+    "protocol_stage": "consent",
+    "category": "Clickjacking",
+    "priority": "Must",
+    "requirement": "Use the X-Frame-Options header to prevent Clickjacking attack",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-10.13"
+    ]
+  },
+  {
+    "id": 20,
+    "protocol_stage": "consent",
+    "category": "authentication",
+    "priority": "Must",
+    "requirement": "Authenticate the resource owner before obtaining an authorization grant",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-3.1",
+      "rfc6749-10.2"
+    ]
+  },
+  {
+    "id": 21,
+    "protocol_stage": "consent",
+    "category": "authorization",
+    "priority": "Should",
+    "requirement": "Provide the resource owner with information about the client and the requested authorization scope and lifetime",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-10.2"
+    ]
+  },
+  {
+    "id": 22,
+    "protocol_stage": "consent",
+    "category": "redirect",
+    "priority": "Should",
+    "requirement": "Warn resource owner if client redirect_uri does not use HTTPS",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-3.1.2.1"
+    ]
+  },
+  {
+    "id": 23,
+    "protocol_stage": "consent",
+    "category": "redirect",
+    "priority": "Should",
+    "requirement": "Inform the resource owner if the redirect_uri parameter fails validation due to a missing, invalid, or mismatching redirection URI",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-3.1.2.4",
+      "rfc6749-4.1.2.1"
+    ]
+  },
+  {
+    "id": 24,
+    "protocol_stage": "consent",
+    "category": "client_id",
+    "priority": "Should",
+    "requirement": "Inform the resource owner if the client_id parameter is missing or invalid",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-4.1.2.1"
+    ]
+  },
+  {
+    "id": 25,
+    "protocol_stage": "redirect",
+    "category": "redirect_uri",
+    "priority": "Must",
+    "requirement": "Return any query component registered as part of the redirect_uri, even when additional query parameters are added",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-3.1.2"
+    ]
+  },
+  {
+    "id": 26,
+    "protocol_stage": "redirect",
+    "category": "redirect_uri",
+    "priority": "Must",
+    "requirement": "Not redirect the resource owner user-agent if the redirect_uri parameter fails validation due to a missing, invalid, or mismatching redirection URI",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-3.1.2.4",
+      "rfc6749-4.1.2.1"
+    ]
+  },
+  {
+    "id": 27,
+    "protocol_stage": "redirect",
+    "category": "Open redirect",
+    "priority": "Must",
+    "requirement": "Protect against open-redirect attacks",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-10.15"
+    ]
+  },
+  {
+    "id": 28,
+    "protocol_stage": "redirect",
+    "category": "client_id",
+    "priority": "Must",
+    "requirement": "Not redirect the resource owner user-agent if the client_id parameter is missing or invalid",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-4.1.2.1"
+    ]
+  },
+  {
+    "id": 29,
+    "protocol_stage": "redirect",
+    "category": "code",
+    "priority": "Must",
+    "requirement": "Include a code parameter in the query component of the redirection URI",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-4.1.2"
+    ]
+  },
+  {
+    "id": 30,
+    "protocol_stage": "redirect",
+    "category": "code",
+    "priority": "Must",
+    "requirement": "Expire the authorization code shortly after it is issued",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-4.1.2",
+      "rfc6749-10.5"
+    ]
+  },
+  {
+    "id": 31,
+    "protocol_stage": "redirect",
+    "category": "code",
+    "priority": "Should",
+    "requirement": "Limit the lifetime of the authorization code to 10 minutes",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-4.1.2"
+    ]
+  },
+  {
+    "id": 32,
+    "protocol_stage": "token-request",
+    "category": "TLS",
+    "priority": "Must",
+    "requirement": "Require TLS",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-2.3.1",
+      "rfc6749-3.2",
+      "rfc6749-10.3",
+      "rfc6749-10.4",
+      "rfc6749-10.8",
+      "rfc6749-10.9"
+    ]
+  },
+  {
+    "id": 33,
+    "protocol_stage": "token-request",
+    "category": "HTTP",
+    "priority": "Must",
+    "requirement": "Only support POST requests",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-3.2"
+    ]
+  },
+  {
+    "id": 34,
+    "protocol_stage": "token-request",
+    "category": "parameters",
+    "priority": "Must",
+    "requirement": "Treat empty parameters as if they were omitted from the request",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-3.2"
+    ]
+  },
+  {
+    "id": 35,
+    "protocol_stage": "token-request",
+    "category": "parameters",
+    "priority": "Must",
+    "requirement": "Ignore unrecognised request parameters",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-3.2"
+    ]
+  },
+  {
+    "id": 36,
+    "protocol_stage": "token-request",
+    "category": "parameters",
+    "priority": "Must",
+    "requirement": "Validate that request parameters do not appear more than once",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-3.2"
+    ]
+  },
+  {
+    "id": 37,
+    "protocol_stage": "token-request",
+    "category": "authentication",
+    "priority": "Must",
+    "requirement": "Not authenticate the client using only the client identifier",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-2.2"
+    ]
+  },
+  {
+    "id": 38,
+    "protocol_stage": "token-request",
+    "category": "authentication",
+    "priority": "Must",
+    "requirement": "Verify only 1 authentication method is used",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-2.3"
+    ]
+  },
+  {
+    "id": 39,
+    "protocol_stage": "token-request",
+    "category": "authentication",
+    "priority": "Must",
+    "requirement": "Support HTTP Basic Authentication for clients that were issued a client password",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-2.3.1"
+    ]
+  },
+  {
+    "id": 40,
+    "protocol_stage": "token-request",
+    "category": "authentication",
+    "priority": "Should",
+    "requirement": "Support authentication via credentials in the body of the message",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-2.3.1"
+    ]
+  },
+  {
+    "id": 41,
+    "protocol_stage": "token-request",
+    "category": "authentication",
+    "priority": "Must",
+    "requirement": "Validate the client_id and client_secret parameters are present when credentials are sent in the body of the message",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-2.3.1"
+    ]
+  },
+  {
+    "id": 42,
+    "protocol_stage": "token-request",
+    "category": "authentication",
+    "priority": "Must",
+    "requirement": "Validate the client_id and client_secret are not sent in the request URI",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-2.3.1"
+    ]
+  },
+  {
+    "id": 43,
+    "protocol_stage": "token-request",
+    "category": "authentication",
+    "priority": "Must",
+    "requirement": "Validate the client is using the authentication method registered for that client",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-2.3.1"
+    ]
+  },
+  {
+    "id": 44,
+    "protocol_stage": "token-request",
+    "category": "authentication",
+    "priority": "Must",
+    "requirement": "Implement controls to mitigate brute force attacks",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-2.3.1",
+      "rfc6749-10.10"
+    ]
+  },
+  {
+    "id": 45,
+    "protocol_stage": "token-request",
+    "category": "authentication",
+    "priority": "Must",
+    "requirement": "Authenticate the client",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-4.1.3",
+      "rfc6749-4.4.2",
+      "rfc6749-6",
+      "rfc6749-10.2",
+      "rfc6749-10.5"
+    ]
+  },
+  {
+    "id": 46,
+    "protocol_stage": "token-request",
+    "category": "grant_type",
+    "priority": "Must",
+    "requirement": "Validate the grant_type parameter is present and has value of â€œauthorization_codeâ€ or â€œrefresh_tokenâ€",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-4.1.3",
+      "rfc6749-6"
+    ]
+  },
+  {
+    "id": 47,
+    "protocol_stage": "token-request",
+    "category": "grant_type",
+    "priority": "Must",
+    "requirement": "Validate the grant_type parameter is present and has value of â€œclient_credentialsâ€ or â€œrefresh_tokenâ€",
+    "response_type": [
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-4.4",
+      "rfc6749-6"
+    ]
+  },
+  {
+    "id": 48,
+    "protocol_stage": "token-request",
+    "category": "code",
+    "priority": "Must",
+    "requirement": "Validate the code parameter is present",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-4.1.3"
+    ]
+  },
+  {
+    "id": 49,
+    "protocol_stage": "token-request",
+    "category": "code",
+    "priority": "Must",
+    "requirement": "Validate the authorization code has not been used before",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-4.1.2",
+      "rfc6749-10.5"
+    ]
+  },
+  {
+    "id": 50,
+    "protocol_stage": "token-request",
+    "category": "code",
+    "priority": "Must",
+    "requirement": "Revoke all previous access tokens associated with an authorization code if it is used more than once",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-4.1.2",
+      "rfc6749-10.5"
+    ]
+  },
+  {
+    "id": 51,
+    "protocol_stage": "token-request",
+    "category": "code",
+    "priority": "Must",
+    "requirement": "Validate that the authorization code was issued to the authenticated client",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-4.1.3",
+      "rfc6749-10.5"
+    ]
+  },
+  {
+    "id": 52,
+    "protocol_stage": "token-request",
+    "category": "code",
+    "priority": "Must",
+    "requirement": "Validate that the authorization code is valid",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-4.1.3"
+    ]
+  },
+  {
+    "id": 53,
+    "protocol_stage": "token-request",
+    "category": "redirect_uri",
+    "priority": "Must",
+    "requirement": "Validate the redirect_uri is present and is identical to the one sent in the authorization request, if a redirect_uri was sent",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-4.1.3",
+      "rfc6749-10.6"
+    ]
+  },
+  {
+    "id": 54,
+    "protocol_stage": "token-request",
+    "category": "refresh_token",
+    "priority": "Must",
+    "requirement": "Validate that the refresh_token was issued to the client presenting it, when grant_type=â€refresh_tokenâ€",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-10.4"
+    ]
+  },
+  {
+    "id": 55,
+    "protocol_stage": "token-request",
+    "category": "refresh_token",
+    "priority": "Must",
+    "requirement": "Validate the refresh_token parameter is present when grant_type=â€refresh_tokenâ€",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-6"
+    ]
+  },
+  {
+    "id": 56,
+    "protocol_stage": "token-request",
+    "category": "refresh_token/scope",
+    "priority": "Must",
+    "requirement": "Validate the scope parameter, if present, includes only the same grants as originally granted by the resource owner, , when grant_type=â€refresh_tokenâ€",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-6"
+    ]
+  },
+  {
+    "id": 57,
+    "protocol_stage": "token-request",
+    "category": "refresh_token",
+    "priority": "Must",
+    "requirement": "Validate the refresh_token, when grant_type=â€refresh_tokenâ€",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-6"
+    ]
+  },
+  {
+    "id": 58,
+    "protocol_stage": "token-request",
+    "category": "refresh_token",
+    "priority": "Must",
+    "requirement": "Validate any new refresh_token issued has the identical scope to the refresh_token in the client request, when grant_type=â€refresh_tokenâ€",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-6"
+    ]
+  },
+  {
+    "id": 59,
+    "protocol_stage": "token-response",
+    "category": "HTTP",
+    "priority": "Must",
+    "requirement": "Ensure the Cache-Control response header has the value â€œno-storeâ€",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-5.1"
+    ]
+  },
+  {
+    "id": 60,
+    "protocol_stage": "token-response",
+    "category": "HTTP",
+    "priority": "Must",
+    "requirement": "Ensure the Pragma response header has the value â€œno-cacheâ€",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-5.1"
+    ]
+  },
+  {
+    "id": 61,
+    "protocol_stage": "token-response",
+    "category": "acess_token",
+    "priority": "Must",
+    "requirement": "Ensure that access tokens cannot be generated, modified, or guessed to produce valid access tokens by unauthorized parties",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-10.3"
+    ]
+  },
+  {
+    "id": 62,
+    "protocol_stage": "token-response",
+    "category": "scope",
+    "priority": "Must",
+    "requirement": "Include the scope parameter containing the actual granted scopes if it is different from the scope requested",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-3.3",
+      "rfc6749-5.1"
+    ]
+  },
+  {
+    "id": 63,
+    "protocol_stage": "token-response",
+    "category": "refresh_token",
+    "priority": "Should",
+    "requirement": "Not issue a refresh token",
+    "response_type": [
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-4.4.3"
+    ]
+  },
+  {
+    "id": 64,
+    "protocol_stage": "token-response",
+    "category": "token_type",
+    "priority": "Must",
+    "requirement": "Provide the token_type parameter is in the response",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-5.1"
+    ]
+  },
+  {
+    "id": 65,
+    "protocol_stage": "token-response",
+    "category": "expires_in",
+    "priority": "Must",
+    "requirement": "Return an expires_in parameter",
+    "response_type": [
+      "code",
+      "client_credentials"
+    ],
+    "reference": [
+      "rfc6749-5.1"
+    ]
+  },
+  {
+    "id": 66,
+    "protocol_stage": "token-response",
+    "category": "refresh_token",
+    "priority": "Must",
+    "requirement": "Ensure that refresh tokens cannot be generated, modified, or guessed to produce valid refresh tokens by unauthorized parties",
+    "response_type": [
+      "code"
+    ],
+    "reference": [
+      "rfc6749-10.4"
+    ]
+  }
+]
