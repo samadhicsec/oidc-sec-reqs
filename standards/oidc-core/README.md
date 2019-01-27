@@ -32,4 +32,4 @@ The contents of the files (excluding oidc-core-sec-reqs-raw.json) are a JSON arr
 | priority | One of: Must, Should, Could |
 | requirement | Description of requirement relative the protocol_stage and category |
 | response_type | The values of the response_type parameter sent in the authn-request that this requirement applies to.  One of: code, code id_token, code token, code id_token token |
-| reference | The sections in the standard this requirements is derived from |
+| reference | The sections in the standard this requirement is derived from |
